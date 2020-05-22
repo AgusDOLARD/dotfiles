@@ -1,0 +1,3 @@
+copy-only = true
+files = [emojis]
+skin-tone = black
