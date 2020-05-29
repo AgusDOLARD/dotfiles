@@ -1,0 +1,151 @@
+set $mod Mod1
+set $altMod Mod4
+set $refresh_i3status killall -SIGUSR1 i3status
+
+set $ws1 "1: "
+set $ws2 "2:"
+set $ws3 "3: "
+set $ws4 "4: "
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10: "
+
+# -------------------------- Style -------------------------------#
+
+
+font pango:iosevka 8
+
+hide_edge_borders smart
+gaps inner 50
+gaps outer 50
+workspace $ws3 gaps outer 150
+workspace $ws2 gaps inner 10
+
+set $primary #f8f8f8
+set $accent #888888
+set $dark #141414
+
+#                       border              background         text                 indicator      child_border
+client.focused          $primary $dark $primary $primary $primary
+client.unfocused        $accent $dark $accent $dark $accent
+client.background       $dark
+
+
+for_window [class=".*"] border pixel 2
+for_window [instance="spotify"] move to workspace $ws3
+for_window [instance="discord"] move to workspace $ws4
+for_window [instance="telegram-desktop"] move to workspace $ws4
+for_window [class="Thunderbird"] move to workspace $ws10
+
+# -------------------------- Keybindings -------------------------------#
+
+bindsym Print exec scrot ~/Documents/scrot/ -d 2 && notify-send "Screenshot"
+bindsym --release $mod+bracketright exec --no-startup-id xdotool key --clearmodifiers ctrl+Next
+bindsym --release $mod+bracketleft exec --no-startup-id xdotool key --clearmodifiers ctrl+Prior
+
+bindsym XF86AudioRaiseVolume exec amixer set Master 10%+
+bindsym XF86AudioLowerVolume exec amixer set Master 10%-
+bindsym XF86AudioMute        exec amixer set Master toggle 
+bindsym XF86MonBrightnessUp exec  $SCRIPT_DIR/bright Up
+bindsym XF86MonBrightnessDown exec  $SCRIPT_DIR/bright Down
+bindsym XF86TouchpadToggle exec  $SCRIPT_DIR/touchpad
+
+bindsym $mod+$altMod+Up exec alacritty -e alsamixer
+bindsym $mod+$altMod+Right exec playerctl next
+bindsym $mod+$altMod+Left exec playerctl previous
+bindsym $mod+$altMod+Down exec playerctl play-pause
+
+bindsym $mod+o exec alacritty -e nnn
+bindsym $mod+n exec alacritty -e nmtui 
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+bindsym $mod+Return exec alacritty
+bindsym $mod+q kill
+
+
+#Rofi menus
+bindsym $mod+d exec rofi -show drun 
+bindsym $mod+Tab exec rofi -show window
+bindsym $mod+Shift+q exec  $SCRIPT_DIR/powermenu 
+bindsym $mod+i exec rofimoji
+
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+bindsym $mod+F1 split h
+bindsym $mod+F2 split v
+bindsym $mod+e layout toggle split
+
+bindsym $mod+f fullscreen toggle
+
+bindsym $mod+Shift+space floating toggle
+
+# -------------------------- Workspaces -------------------------------#
+
+
+# switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
+
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+
+mode "resize" {
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+
+# -------------------------- Apps -------------------------------#
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id nm-applet
+
+exec --no-startup-id i3-msg 'exec firefox'
+exec --no-startup-id i3-msg 'exec spotify'
+exec --no-startup-id i3-msg 'exec discord'
+exec --no-startup-id i3-msg 'exec telegram-desktop'
+exec --no-startup-id i3-msg 'exec thunderbird'
+
+exec --no-startup-id picom --experimental-backends
+exec_always --no-startup-id ~/.fehbg
+exec_always --no-startup-id  ~/.config/polybar/launch.sh
