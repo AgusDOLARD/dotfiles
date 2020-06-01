@@ -13,11 +13,9 @@ alias n="nnn"
 alias sn="sudo nnn"
 
 alias yolo="commit -m "$(curl -s http://whatthecommit.com/index.txt)""
-alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias v=$EDITOR
 alias i3Conf="$EDITOR ~/.config/i3/config"
-alias polybarConf="$EDITOR ~/.config/polybar/config.ini"
-alias polybarConfMod="$EDITOR ~/.config/polybar/modules.ini"
-
-alias VimMode="xmodmap ~/.Xmodmap ; xmodmap -e 'clear lock'"
-alias VimQuit="setxkbmap"
+alias arst="xmodmap ~/.Xmodmap ; xmodmap -e 'clear lock'"
+alias asdf="setxkbmap us colemak"
+alias yt="youtube-dl -f mp4 -o '~/Videos/%(title)s-%(uploader)s.%(ext)s'" -ic
+alias ytm="youtube-dl --add-metadata --audio-quality 0 --audio-format mp3 --extract-audio -o '~/Music/%(title)s|%(uploader)s.%(ext)s'" -ic

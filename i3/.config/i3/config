@@ -1,5 +1,5 @@
-set $mod Mod1
-set $altMod Mod4
+set $mod Mod4
+set $altMod Mod1
 set $refresh_i3status killall -SIGUSR1 i3status
 
 set $ws1 "1: "
@@ -28,23 +28,24 @@ set $primary #f8f8f8
 set $accent #888888
 set $dark #141414
 
-#                       border              background         text                 indicator      child_border
-client.focused          $primary $dark $primary $primary $primary
-client.unfocused        $accent $dark $accent $dark $accent
-client.background       $dark
+client.focused          $primary $dark $primary $primary $primary 
+client.unfocused        $accent $dark $accent $dark $accent 
+client.background       $dark 
 
+for_window [class=".*"] border pixel 2 
+for_window [instance="spotify"] move to workspace $ws3 
+for_window [instance="discord"] move to workspace $ws4 
+for_window [instance="telegram-desktop"] move to workspace $ws4 
+for_window [class="Thunderbird"] move to workspace $ws10 
 
-for_window [class=".*"] border pixel 2
-for_window [instance="spotify"] move to workspace $ws3
-for_window [instance="discord"] move to workspace $ws4
-for_window [instance="telegram-desktop"] move to workspace $ws4
-for_window [class="Thunderbird"] move to workspace $ws10
 
 # -------------------------- Keybindings -------------------------------#
 
 bindsym Print exec scrot ~/Documents/scrot/ -d 2 && notify-send "Screenshot"
-bindsym --release $mod+bracketright exec --no-startup-id xdotool key --clearmodifiers ctrl+Next
-bindsym --release $mod+bracketleft exec --no-startup-id xdotool key --clearmodifiers ctrl+Prior
+bindsym --release Mod1+bracketright exec --no-startup-id xdotool key --clearmodifiers Alt_L+Right
+bindsym --release Mod1+bracketleft exec --no-startup-id xdotool key --clearmodifiers Alt_L+Left
+bindsym --release control+bracketright exec --no-startup-id xdotool key --clearmodifiers ctrl+Next
+bindsym --release control+bracketleft exec --no-startup-id xdotool key --clearmodifiers ctrl+Next
 
 bindsym XF86AudioRaiseVolume exec amixer set Master 10%+
 bindsym XF86AudioLowerVolume exec amixer set Master 10%-
@@ -54,12 +55,12 @@ bindsym XF86MonBrightnessDown exec  $SCRIPT_DIR/bright Down
 bindsym XF86TouchpadToggle exec  $SCRIPT_DIR/touchpad
 
 bindsym $mod+$altMod+Up exec alacritty -e alsamixer
-bindsym $mod+$altMod+Right exec playerctl next
-bindsym $mod+$altMod+Left exec playerctl previous
-bindsym $mod+$altMod+Down exec playerctl play-pause
+bindsym $mod+$altMod+Right exec playerctl --player=playerctld next
+bindsym $mod+$altMod+Left exec playerctl --player=playerctld previous
+bindsym $mod+$altMod+Down exec playerctl --player=playerctld play-pause
 
 bindsym $mod+o exec alacritty -e nnn
-bindsym $mod+n exec alacritty -e nmtui 
+bindsym $mod+s exec alacritty -e nmtui 
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -69,26 +70,36 @@ bindsym $mod+q kill
 
 
 #Rofi menus
-bindsym $mod+d exec rofi -show drun 
+bindsym $mod+w exec rofi -show drun 
 bindsym $mod+Tab exec rofi -show window
 bindsym $mod+Shift+q exec  $SCRIPT_DIR/powermenu 
-bindsym $mod+i exec rofimoji
+bindsym $mod+y exec rofimoji
 
 bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
+bindsym $mod+n focus down
+bindsym $mod+e focus up
+bindsym $mod+i focus right
 
 bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
+bindsym $mod+Shift+n move down
+bindsym $mod+Shift+e move up
+bindsym $mod+Shift+i move right
 
-bindsym $mod+F1 split h
-bindsym $mod+F2 split v
-bindsym $mod+e layout toggle split
+bindsym $mod+Left focus left
+bindsym $mod+Right focus right
+bindsym $mod+Up focus up
+bindsym $mod+Down focus down
 
-bindsym $mod+f fullscreen toggle
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+bindsym $mod+z split h
+bindsym $mod+x split v
+bindsym $mod+c layout toggle split
+
+bindsym $mod+m fullscreen toggle
 
 bindsym $mod+Shift+space floating toggle
 
@@ -106,6 +117,7 @@ bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
+
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
