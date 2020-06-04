@@ -6,12 +6,12 @@ set $ws1 "1: "
 set $ws2 "2:"
 set $ws3 "3: "
 set $ws4 "4: "
-set $ws5 "5"
+set $ws5 "5: "
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
-set $ws10 "10: "
+set $ws10 "10"
 
 # -------------------------- Style -------------------------------#
 
@@ -36,7 +36,7 @@ for_window [class=".*"] border pixel 2
 for_window [instance="spotify"] move to workspace $ws3 
 for_window [instance="discord"] move to workspace $ws4 
 for_window [instance="telegram-desktop"] move to workspace $ws4 
-for_window [class="Thunderbird"] move to workspace $ws10 
+for_window [class="Thunderbird"] move to workspace $ws5 
 
 
 # -------------------------- Keybindings -------------------------------#
@@ -58,9 +58,10 @@ bindsym $mod+$altMod+Up exec alacritty -e alsamixer
 bindsym $mod+$altMod+Right exec playerctl --player=playerctld next
 bindsym $mod+$altMod+Left exec playerctl --player=playerctld previous
 bindsym $mod+$altMod+Down exec playerctl --player=playerctld play-pause
+bindsym Pause exec playerctl --player=playerctld play-pause
 
 bindsym $mod+o exec alacritty -e nnn
-bindsym $mod+s exec alacritty -e nmtui 
+bindsym $mod+n exec alacritty -e nmtui 
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -68,22 +69,24 @@ floating_modifier $mod
 bindsym $mod+Return exec alacritty
 bindsym $mod+q kill
 
+bindsym $mod+Tab exec --no-startup-id $SCRIPT_DIR/focuscolumn.py -s -l
+bindsym $mod+space exec --no-startup-id $SCRIPT_DIR/focuscolumn.py -m
+bindsym $mod+BackSpace exec --no-startup-id $SCRIPT_DIR/focuscolumn.py -s -a
 
 #Rofi menus
-bindsym $mod+w exec rofi -show drun 
-bindsym $mod+Tab exec rofi -show window
+bindsym $mod+d exec rofi -show drun 
 bindsym $mod+Shift+q exec  $SCRIPT_DIR/powermenu 
 bindsym $mod+y exec rofimoji
 
 bindsym $mod+h focus left
-bindsym $mod+n focus down
-bindsym $mod+e focus up
-bindsym $mod+i focus right
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 bindsym $mod+Shift+h move left
-bindsym $mod+Shift+n move down
-bindsym $mod+Shift+e move up
-bindsym $mod+Shift+i move right
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 bindsym $mod+Left focus left
 bindsym $mod+Right focus right
@@ -95,13 +98,12 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-bindsym $mod+z split h
-bindsym $mod+x split v
-bindsym $mod+c layout toggle split
+bindsym $mod+period split h
+bindsym $mod+comma split v
+bindsym $mod+e layout toggle split
 
 bindsym $mod+m fullscreen toggle
 
-bindsym $mod+Shift+space floating toggle
 
 # -------------------------- Workspaces -------------------------------#
 
@@ -158,6 +160,7 @@ exec --no-startup-id i3-msg 'exec discord'
 exec --no-startup-id i3-msg 'exec telegram-desktop'
 exec --no-startup-id i3-msg 'exec thunderbird'
 
+exec_always --no-startup-id $SCRIPT_DIR/autolayout.py
 exec --no-startup-id picom --experimental-backends
 exec_always --no-startup-id ~/.fehbg
 exec_always --no-startup-id  ~/.config/polybar/launch.sh
