@@ -19,3 +19,6 @@ alias arst="setxkbmap us -option caps:backspace"
 alias asdf="setxkbmap us colemak"
 alias yt="youtube-dl -f mp4 -o '~/Videos/%(title)s-%(uploader)s.%(ext)s'" -ic
 alias ytm="youtube-dl --add-metadata --audio-quality 0 --audio-format mp3 --extract-audio -o '~/Music/%(title)s|%(uploader)s.%(ext)s'" -ic
+
+# Enable ViMode
+bindkey -v
