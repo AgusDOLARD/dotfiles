@@ -42,10 +42,6 @@ for_window [class="Thunderbird"] move to workspace $ws5
 # -------------------------- Keybindings -------------------------------#
 
 bindsym Print exec scrot ~/Documents/scrot/ -d 2 && notify-send "Screenshot"
-bindsym --release Mod1+bracketright exec --no-startup-id xdotool key --clearmodifiers Alt_L+Right
-bindsym --release Mod1+bracketleft exec --no-startup-id xdotool key --clearmodifiers Alt_L+Left
-bindsym --release control+bracketright exec --no-startup-id xdotool key --clearmodifiers ctrl+Next
-bindsym --release control+bracketleft exec --no-startup-id xdotool key --clearmodifiers ctrl+Next
 
 bindsym XF86AudioRaiseVolume exec amixer set Master 10%+
 bindsym XF86AudioLowerVolume exec amixer set Master 10%-
