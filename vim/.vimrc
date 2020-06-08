@@ -54,7 +54,7 @@ let g:ycm_key_invoke_completion = '<C-Space>'
 let g:ycm_key_list_stop_completion = ['<C-y>']
 let mapleader = " "
 
-imap jj <Esc>
+" imap jj <Esc>
 
 nmap <C-h> <C-w>h
 nmap <C-j> <C-w>j

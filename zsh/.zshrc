@@ -4,8 +4,8 @@ source $ZSH/oh-my-zsh.sh
 
 HISTFILE=~/.cache/zsh/history
 
-alias arst="setxkbmap us -option caps:backspace"
-alias asdf="setxkbmap us colemak"
+alias arst="setxkbmap us -option caps:backspace -option altwin:swap_lalt_lwin"
+alias asdf="setxkbmap us colemak -option altwin:swap_lalt_lwin"
 alias byeOrphans='sudo pacman -Rns $(pacman -Qtdq)'
 alias cya="rm -rf"
 alias i3Conf="$EDITOR ~/.config/i3/config"
