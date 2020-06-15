@@ -7,5 +7,5 @@ device="$(xinput list | grep -P '(?<= )[\w\s:]*(?i)(touchpad|synaptics)(?-i).*?(
 
 # If it was activated disable it and if it wasn't disable it
 [[ "$(xinput list-props "$device" | grep -P ".*Device Enabled.*\K.(?=$)" -o)" == "1" ]] &&
-    xinput disable "$device" ||
-    xinput enable "$device"
+	(xinput disable "$device" && notify-send 'Touchpad' 'Touchpad diabled') ||
+	(xinput enable "$device" && notify-send 'Touchpad' 'Touchpad enabled')
