@@ -18,6 +18,8 @@ set undofile
 
 call plug#begin('~/.vim/plugged')
 	
+	Plug 'SirVer/ultisnips'
+	Plug 'honza/vim-snippets'
 	Plug 'airblade/vim-gitgutter'
 	Plug 'ap/vim-css-color'
 	Plug 'itchyny/lightline.vim'
@@ -50,6 +52,9 @@ highlight GitGutterChange guifg=#990000 ctermfg=2
 highlight GitGutterDelete guifg=#DDDD00 ctermfg=2
 highlight! link SignColumn LineNr
 
+let g:UltiSnipsExpandTrigger="<C-l>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let g:ycm_key_invoke_completion = '<C-Space>'
 let g:ycm_key_list_stop_completion = ['<C-y>']
 let mapleader = " "
