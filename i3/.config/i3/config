@@ -2,8 +2,12 @@ set $mod Mod4
 set $altMod Mod1
 set $refresh_i3status killall -SIGUSR1 i3status
 
+set $primary #f8f8f8
+set $accent #888888
+set $dark #141414
+
 set $ws1 "1: "
-set $ws2 "2:"
+set $ws2 "2: "
 set $ws3 "3: "
 set $ws4 "4: "
 set $ws5 "5: "
@@ -24,10 +28,6 @@ gaps outer 50
 workspace $ws3 gaps outer 150
 workspace $ws2 gaps inner 10
 
-set $primary #f8f8f8
-set $accent #888888
-set $dark #141414
-
 client.focused          $primary $dark $primary $primary $primary 
 client.unfocused        $accent $dark $accent $dark $accent 
 client.background       $dark 
@@ -37,9 +37,12 @@ for_window [instance="spotify"] move to workspace $ws3
 for_window [instance="discord"] move to workspace $ws4 
 for_window [instance="telegram-desktop"] move to workspace $ws4 
 for_window [class="Thunderbird"] move to workspace $ws5 
+for_window [instance="Farge"] floating enable
 
 
 # -------------------------- Keybindings -------------------------------#
+
+bindsym $mod+Shift+f --release exec farge
 
 bindsym Print exec scrot ~/Documents/scrot/ -d 2 && notify-send "Screenshot"
 
@@ -62,8 +65,6 @@ bindsym $mod+n exec alacritty -e nmtui
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-bindsym $mod+Return exec alacritty
-bindsym $mod+q kill
 
 bindsym $mod+Tab exec --no-startup-id $SCRIPT_DIR/focuscolumn.py -s -l
 bindsym $mod+space exec --no-startup-id $SCRIPT_DIR/focuscolumn.py -m
@@ -74,6 +75,22 @@ bindsym $mod+d exec rofi -show drun
 bindsym $mod+Shift+q exec  $SCRIPT_DIR/powermenu 
 bindsym $mod+y exec rofimoji
 
+
+bindsym $mod+period split h
+bindsym $mod+comma split v
+bindsym $mod+e layout toggle split
+bindsym $mod+m fullscreen toggle
+
+bindsym $mod+$altMod+h resize shrink width 10 px or 10 ppt
+bindsym $mod+$altMod+j resize shrink height 10 px or 10 ppt
+bindsym $mod+$altMod+k resize grow height 10 px or 10 ppt
+bindsym $mod+$altMod+l resize grow width 10 px or 10 ppt
+
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+bindsym $mod+Return exec alacritty
+bindsym $mod+q kill
+
 bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
@@ -83,23 +100,6 @@ bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
-
-bindsym $mod+Left focus left
-bindsym $mod+Right focus right
-bindsym $mod+Up focus up
-bindsym $mod+Down focus down
-
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
-
-bindsym $mod+period split h
-bindsym $mod+comma split v
-bindsym $mod+e layout toggle split
-
-bindsym $mod+m fullscreen toggle
-
 
 # -------------------------- Workspaces -------------------------------#
 
@@ -118,41 +118,28 @@ bindsym $mod+0 workspace $ws10
 
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace $ws1
-bindsym $mod+Shift+2 move container to workspace $ws2
-bindsym $mod+Shift+3 move container to workspace $ws3
-bindsym $mod+Shift+4 move container to workspace $ws4
-bindsym $mod+Shift+5 move container to workspace $ws5
-bindsym $mod+Shift+6 move container to workspace $ws6
-bindsym $mod+Shift+7 move container to workspace $ws7
-bindsym $mod+Shift+8 move container to workspace $ws8
-bindsym $mod+Shift+9 move container to workspace $ws9
-bindsym $mod+Shift+0 move container to workspace $ws10
+bindsym $mod+Shift+1 move container to workspace $ws1; workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2; workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3; workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4; workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5; workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6; workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9; workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10; workspace $ws10
 
-bindsym $mod+Shift+c reload
-bindsym $mod+Shift+r restart
-
-mode "resize" {
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym j resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
-
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
-}
-
-bindsym $mod+r mode "resize"
 
 
 # -------------------------- Apps -------------------------------#
+
+
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 
 exec --no-startup-id i3-msg 'exec firefox'
 exec --no-startup-id i3-msg 'exec spotify'
-exec --no-startup-id i3-msg 'exec discord'
+# exec --no-startup-id i3-msg 'exec discord'
 exec --no-startup-id i3-msg 'exec telegram-desktop'
 exec --no-startup-id i3-msg 'exec thunderbird'
 

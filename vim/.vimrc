@@ -18,6 +18,7 @@ set undofile
 
 call plug#begin('~/.vim/plugged')
 	
+	Plug 'Xuyuanp/nerdtree-git-plugin'
 	Plug 'SirVer/ultisnips'
 	Plug 'honza/vim-snippets'
 	Plug 'airblade/vim-gitgutter'
@@ -43,6 +44,7 @@ if !exists('##TextYankPost')
 endif
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+autocmd BufEnter * if bufname('#') =~# "^NERD_tree_" && winnr('$') > 1 | b# | endif
 autocmd FileType apache setlocal commentstring=#\ %s
 autocmd FileType tex,latex,markdown set spell spelllang=en_us
 autocmd InsertEnter * norm zz
@@ -52,6 +54,9 @@ highlight GitGutterChange guifg=#990000 ctermfg=2
 highlight GitGutterDelete guifg=#DDDD00 ctermfg=2
 highlight! link SignColumn LineNr
 
+let g:timeoutlen=100 
+let g:termsize=10*0
+let g:plug_window = 'noautocmd vertical topleft new'
 let g:UltiSnipsExpandTrigger="<C-l>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
@@ -61,22 +66,20 @@ let mapleader = " "
 
 " imap jj <Esc>
 
-nmap <C-h> <C-w>h
-nmap <C-j> <C-w>j
-nmap <C-k> <C-w>k
-nmap <C-l> <C-w>l
 nmap <leader>;	%
-nmap <leader>f :NERDTreeToggle<CR>
+nmap <leader>f :NERDTreeToggle<CR> 
 nmap <leader>h	0
 nmap <leader>l	$
 nmap <leader>H  :noh<CR>
 nmap <leader>S :setlocal spell! spelllang=en_us<CR>
 nmap <S-u>	<C-r>
 
-nnoremap <leader>[ :tabprevious<CR>
-nnoremap <leader>] :tabnext<CR>
+nnoremap <C-j> <C-d>
+nnoremap <C-k> <C-u>
+nnoremap <S-j> :tabprevious<CR>
+nnoremap <S-k> :tabnext<CR>
+nnoremap <leader>\ :nohlsearch<CR><CR>
 nnoremap <leader>s :w<CR>
 nnoremap <leader>t :tabclose<CR>
-nnoremap <leader>w :w <bar> :source %<CR>
-nnoremap <leader>\ :nohlsearch<CR><CR>
+nnoremap <leader>w :source ~/.vimrc<CR>
 

@@ -13,12 +13,15 @@ alias i3Conf="$EDITOR ~/.config/i3/config"
 alias mkd='mkdir -pv'
 alias n="nnn"
 alias p='sudo pacman'
-alias sn="sudo nnn"
 alias v=$EDITOR
 alias wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"
 alias yolo="commit -m "$(curl -s http://whatthecommit.com/index.txt)""
-alias yt="youtube-dl -f mp4 -o '~/Videos/%(title)s-%(uploader)s.%(ext)s'" -ic
-alias ytm="youtube-dl --add-metadata --audio-quality 0 --audio-format mp3 --extract-audio -o '~/Music/%(title)s|%(uploader)s.%(ext)s'" -ic
+alias yt="youtube-dl -f mp4 -o '~/Videos/%(title)s-%(uploader)s.%(ext)s' -ic" 
+alias ytm="youtube-dl --add-metadata --audio-quality 0 --audio-format mp3 --extract-audio -o '~/Music/%(title)s|%(uploader)s.%(ext)s' -ic"
+
+function h(){
+	history | tail -n ${1:-10} | sed 's/^\s*[0-9]*\s*//' 
+}
 
 # Enable ViMode
 bindkey -v

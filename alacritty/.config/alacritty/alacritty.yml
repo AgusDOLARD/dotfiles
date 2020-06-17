@@ -231,12 +231,18 @@ mouse_bindings:
 # at once.
 key_bindings:
   # - { key: Return,   mods: Control|Shift, action: SpawnNewInstance }
-  # - { key: V,        mods: Alt, action: Paste}
-  # - { key: C,        mods: Alt, action: Copy}
-  - { key: K,        mods: Control, action: ScrollLineUp}
-  - { key: J,        mods: Control, action: ScrollLineDown }
+  - { key: V,        mods: Alt, action: Paste}
+  - { key: C,        mods: Alt, action: Copy}
+  # - { key: K,        mods: Control, action: ScrollLineUp}
+  # - { key: J,        mods: Control, action: ScrollLineDown }
   - { key: J,        mods: Control|Shift, action: ScrollPageDown }
   - { key: K,        mods: Control|Shift, action: ScrollPageUp }
+  - { key: G,        mods: Shift,   mode: ~Alt, action: ScrollToBottom }
+  - { key: Key0,     mods: Control,                 action: ResetFontSize    }
+  - { key: Equals,   mods: Control,                 action: IncreaseFontSize }
+  - { key: Add,      mods: Control,                 action: IncreaseFontSize }
+  - { key: Subtract, mods: Control,                 action: DecreaseFontSize }
+  - { key: Minus,    mods: Control,                 action: DecreaseFontSize }
   # { mouse: Middle, action: PasteSelection }
   #- { key: Paste,                                action: Paste          }
   #- { key: Copy,                                 action: Copy           }
@@ -245,7 +251,6 @@ key_bindings:
   #- { key: PageUp,    mods: Shift,   mode: ~Alt, action: ScrollPageUp,  }
   #- { key: PageDown,  mods: Shift,   mode: ~Alt, action: ScrollPageDown }
   #- { key: Home,      mods: Shift,   mode: ~Alt, action: ScrollToTop,   }
-  #- { key: End,       mods: Shift,   mode: ~Alt, action: ScrollToBottom }
 
   # Vi Mode
   #- { key: Space,  mods: Shift|Control, mode: Vi, action: ScrollToBottom          }
@@ -266,7 +271,6 @@ key_bindings:
   #- { key: Copy,                        mode: Vi, action: ClearSelection          }
   #- { key: V,                           mode: Vi, action: ToggleNormalSelection   }
   #- { key: V,      mods: Shift,         mode: Vi, action: ToggleLineSelection     }
-  #- { key: V,      mods: Control,       mode: Vi, action: ction }
   #- { key: Return,                      mode: Vi, action: Open                    }
   #- { key: K,                           mode: Vi, action: Up                      }
   #- { key: J,                           mode: Vi, action: Down                    }
@@ -295,11 +299,6 @@ key_bindings:
   #- { key: C,        mods: Control|Shift,           action: Copy             }
   #- { key: C,        mods: Control|Shift, mode: Vi, action: ClearSelection   }
   #- { key: Insert,   mods: Shift,                   action: PasteSelection   }
-  #- { key: Key0,     mods: Control,                 action: ResetFontSize    }
-  #- { key: Equals,   mods: Control,                 action: IncreaseFontSize }
-  #- { key: Add,      mods: Control,                 action: IncreaseFontSize }
-  #- { key: Subtract, mods: Control,                 action: DecreaseFontSize }
-  #- { key: Minus,    mods: Control,                 action: DecreaseFontSize }
 
   # (Windows only)
   #- { key: Return,   mods: Alt,           action: ToggleFullscreen }
