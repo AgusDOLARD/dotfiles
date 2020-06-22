@@ -1,10 +1,12 @@
 ZSH_THEME="spaceship"
-plugins=(git z auto-notify vi-mode sudo gitfast pip extract zsh-completions zsh-autosuggestions zsh-syntax-highlighting) 
+plugins=(git z vi-mode sudo gitfast pip extract zsh-completions zsh-autosuggestions zsh-syntax-highlighting) 
 autoload -U compinit && compinit
 source $ZSH/oh-my-zsh.sh
 
 HISTFILE=~/.cache/zsh/history
 
+alias c:="$WINSDD"
+alias d:="$WINHDD"
 alias arst="setxkbmap us -option caps:backspace -option altwin:swap_lalt_lwin"
 alias asdf="setxkbmap us colemak -option altwin:swap_lalt_lwin"
 alias byeOrphans='sudo pacman -Rns $(pacman -Qtdq)'
@@ -16,11 +18,14 @@ alias p='sudo pacman'
 alias v=$EDITOR
 alias wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"
 alias yolo="commit -m "$(curl -s http://whatthecommit.com/index.txt)""
-alias yt="youtube-dl -f mp4 -o '~/Videos/%(title)s-%(uploader)s.%(ext)s' -ic" 
-alias ytm="youtube-dl --add-metadata --audio-quality 0 --audio-format mp3 --extract-audio -o '~/Music/%(title)s|%(uploader)s.%(ext)s' -ic"
+alias yt="youtube-dl -f mp4 -o '$WINHDD/Videos/%(title)s-%(uploader)s.%(ext)s' -ic" 
+alias ytm="youtube-dl --add-metadata --audio-quality 0 --audio-format mp3 --extract-audio -o '$WINHDD/Musica/%(title)s|%(uploader)s.%(ext)s' -ic"
 
 function h(){
-	history | tail -n ${1:-10} | sed 's/^\s*[0-9]*\s*//' 
+	DEFAULT=20
+	RES="history | tail -n ${1:-$DEFAULT} | sed 's/^\s*//'" 
+	[[ "$1" -gt "$DEFAULT" ]] && RES+="| less"
+	eval "$RES"
 }
 
 # Enable ViMode

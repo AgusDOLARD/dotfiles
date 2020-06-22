@@ -19,7 +19,7 @@ set undofile
 call plug#begin('~/.vim/plugged')
 	
 	Plug 'Xuyuanp/nerdtree-git-plugin'
-	Plug 'SirVer/ultisnips'
+	" Plug 'SirVer/ultisnips'
 	Plug 'honza/vim-snippets'
 	Plug 'airblade/vim-gitgutter'
 	Plug 'ap/vim-css-color'
@@ -30,7 +30,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'preservim/nerdtree'
 	Plug 'tpope/vim-commentary'
 	Plug 'tpope/vim-surround'
-	Plug 'ycm-core/YouCompleteMe'
+	"	Plug 'ycm-core/YouCompleteMe'
 
 call plug#end()
 
@@ -57,14 +57,14 @@ highlight! link SignColumn LineNr
 let g:timeoutlen=100 
 let g:termsize=10*0
 let g:plug_window = 'noautocmd vertical topleft new'
-let g:UltiSnipsExpandTrigger="<C-l>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+" let g:UltiSnipsExpandTrigger="<C-l>"
+" let g:UltiSnipsJumpForwardTrigger="<tab>"
+" let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let g:ycm_key_invoke_completion = '<C-Space>'
 let g:ycm_key_list_stop_completion = ['<C-y>']
 let mapleader = " "
 
-" imap jj <Esc>
+imap jj <Esc>
 
 nmap <leader>;	%
 nmap <leader>f :NERDTreeToggle<CR> 
