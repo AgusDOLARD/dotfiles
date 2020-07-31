@@ -18,8 +18,10 @@ set undofile
 
 call plug#begin('~/.vim/plugged')
 	
+	Plug 'jlanzarotta/bufexplorer'
+	Plug 'neovimhaskell/haskell-vim'
 	Plug 'Xuyuanp/nerdtree-git-plugin'
-	" Plug 'SirVer/ultisnips'
+	Plug 'SirVer/ultisnips'
 	Plug 'honza/vim-snippets'
 	Plug 'airblade/vim-gitgutter'
 	Plug 'ap/vim-css-color'
@@ -30,7 +32,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'preservim/nerdtree'
 	Plug 'tpope/vim-commentary'
 	Plug 'tpope/vim-surround'
-	"	Plug 'ycm-core/YouCompleteMe'
+	Plug 'ycm-core/YouCompleteMe'
 
 call plug#end()
 
@@ -57,9 +59,9 @@ highlight! link SignColumn LineNr
 let g:timeoutlen=100 
 let g:termsize=10*0
 let g:plug_window = 'noautocmd vertical topleft new'
-" let g:UltiSnipsExpandTrigger="<C-l>"
-" let g:UltiSnipsJumpForwardTrigger="<tab>"
-" let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+let g:UltiSnipsExpandTrigger="<C-l>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let g:ycm_key_invoke_completion = '<C-Space>'
 let g:ycm_key_list_stop_completion = ['<C-y>']
 let mapleader = " "
@@ -81,5 +83,6 @@ nnoremap <S-k> :tabnext<CR>
 nnoremap <leader>\ :nohlsearch<CR><CR>
 nnoremap <leader>s :w<CR>
 nnoremap <leader>t :tabclose<CR>
-nnoremap <leader>w :source ~/.vimrc<CR>
-
+nnoremap <leader>w :source $MYVIMRC<CR>
+nnoremap <leader>e :tabnew $MYVIMRC<CR>
+nnoremap <leader>cc <C-w><C-w>:q<CR>
