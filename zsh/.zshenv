@@ -1,5 +1,10 @@
 export _Z_DATA="$XDG_CACHE_HOME/z"
 export WINSDD='/mnt/c/Users/agust'
+export SDKFOLDER="$HOME/sdk"
+export ANDROID_HOME="$SDKFOLDER/android"
+export PATH=$ANDROID_HOME/tools:$PATH
+export PATH=$ANDROID_HOME/tools/bin:$PATH
+export PATH=$ANDROID_HOME/platform-tools:$PATH
 export WINHDD='/mnt/d'
 export DISPLAY=:0
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"

@@ -13,6 +13,7 @@ set shiftwidth=4
 set smartcase
 set smartindent
 set tabstop=4 softtabstop=4
+set expandtab
 set undodir=~/.vim/undodir
 set undofile
 
@@ -22,7 +23,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'neovimhaskell/haskell-vim'
 	Plug 'Xuyuanp/nerdtree-git-plugin'
 	Plug 'SirVer/ultisnips'
-	Plug 'honza/vim-snippets'
+	" Plug 'honza/vim-snippets'
 	Plug 'airblade/vim-gitgutter'
 	Plug 'ap/vim-css-color'
 	Plug 'itchyny/lightline.vim'
@@ -67,6 +68,10 @@ let g:ycm_key_list_stop_completion = ['<C-y>']
 let mapleader = " "
 
 imap jj <Esc>
+imap jo <Esc>o
+imap JO <Esc>O
+imap jl <Esc>ea
+imap <C-v> <C-r>0
 
 nmap <leader>;	%
 nmap <leader>f :NERDTreeToggle<CR> 
@@ -78,6 +83,7 @@ nmap <S-u>	<C-r>
 
 nnoremap <C-j> <C-d>
 nnoremap <C-k> <C-u>
+nnoremap <C-m> `
 nnoremap <S-j> :tabprevious<CR>
 nnoremap <S-k> :tabnext<CR>
 nnoremap <leader>\ :nohlsearch<CR><CR>
