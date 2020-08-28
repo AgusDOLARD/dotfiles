@@ -1,27 +1,10 @@
-snippet fn0
-	${1:fn} :: ${2:a}
-	$1 = ${0:undefined}
-
-snippet fn
-	${1:fn} :: ${2:a} -> ${3:a}
-	$1 ${4:x} = ${0:undefined}
-
-snippet fn2
+snippet rec
 	${1:fn} :: ${2:a} -> ${3:a} -> ${4:a}
-	$1 ${5} = ${0:undefined}
-
-snippet fn3
-	${1:fn} :: ${2:a} -> ${3:a} -> ${4:a} -> ${5:a}
-	$1 ${6} = ${0:undefined}
-
-snippet ap
-	${1:map} (${2:fn}) ${0:list}
-
+	$1 ${5:x []} = ${6:[]}
+	$1 ${7:$5} = ${8:$1}
+	
 snippet eq
-	Eq a => ${1:a}
-
-snippet lambda
-	(\\${1:x} -> ${2:undefined})
+	Eq a => ${0:a}
 
 # Especificos
 
@@ -41,5 +24,5 @@ snippet perteneceSnip
 	${1:pertenece} :: Int -> [Int] -> Bool
 	$1 x [] = False
 	$1 x (y:ys) | x == y = True
-		        | otherwise = x `$1` ys
+		        | otherwise = x \`$1\` ys
 	$0
