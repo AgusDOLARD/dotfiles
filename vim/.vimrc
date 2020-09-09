@@ -12,14 +12,15 @@ set tabstop=4 softtabstop=4
 set shiftwidth=4
 set expandtab
 set smartindent
-set undodir=~/.vim/undodir
+set undodir=$XDG_DATA_HOME/vim/undodir
 set undofile
 set noswapfile
 set termguicolors
+set viminfo+='1000,n$XDG_DATA_HOME/vim/viminfo'
 
 call plug#begin('~/.vim/plugged')
 
-	Plug 'jlanzarotta/bufexplorer'
+    Plug 'mcchrish/nnn.vim'
 	Plug 'neovimhaskell/haskell-vim'
     Plug 'dense-analysis/ale'
 	Plug 'SirVer/ultisnips'
@@ -29,25 +30,24 @@ call plug#begin('~/.vim/plugged')
 	Plug 'jiangmiao/auto-pairs'
     Plug 'itchyny/lightline.vim'
 	Plug 'machakann/vim-highlightedyank'
-	Plug 'PotatoesMaster/i3-vim-syntax'
 	Plug 'tpope/vim-commentary'
 	Plug 'tpope/vim-surround'
     Plug 'easymotion/vim-easymotion'
 	Plug 'ycm-core/YouCompleteMe'
-    Plug 'sts10/vim-pink-moon'
+    Plug 'morhetz/gruvbox'
     Plug 'maximbaz/lightline-ale'
 
 call plug#end()
 
 set background=dark
-colorscheme pink-moon
+colorscheme gruvbox
 
 if !exists('##TextYankPost')
 	  map y <Plug>(highlightedyank)
 endif
 
 autocmd InsertEnter * norm zz
-:au BufAdd,BufNewFile,BufRead * nested tab sball
+" :au BufAdd,BufNewFile,BufRead * nested tab sball
 
 
 let g:timeoutlen=100
@@ -58,10 +58,14 @@ let &t_SI.="\e[6 q" "SI = INSERT mode
 let &t_SR.="\e[3 q" "SR = REPLACE mode
 let &t_EI.="\e[1 q" "EI = NORMAL mode]
 
+" NNN
+let g:nnn#layout = { 'window': { 'width': 0.8, 'height': 0.6, 'highlight': 'Debug'  }  }
+let g:nnn#action = { 'e': 'tab split' }
+
 " GitGutter
-highlight GitGutterAdd    guifg=#009900 ctermfg=2
-highlight GitGutterChange guifg=#DDDD00 ctermfg=2
-highlight GitGutterDelete guifg=#990000 ctermfg=2
+highlight GitGutterAdd    guifg=#98971a ctermfg=2
+highlight GitGutterChange guifg=#d79921 ctermfg=2
+highlight GitGutterDelete guifg=#cc241d ctermfg=2
 highlight! link SignColumn LineNr
 
 " Ultisnips 
@@ -88,7 +92,7 @@ let g:ale_fixers = {
 let g:ale_fix_on_save = 1
 
 " Lightline
-let g:lightline = { 'colorscheme': 'wombat'}
+let g:lightline = { 'colorscheme': 'gruvbox'}
 let g:lightline.component_expand = {
       \  'linter_checking': 'lightline#ale#checking',
       \  'linter_infos': 'lightline#ale#infos',
@@ -114,35 +118,39 @@ map F <Plug>(easymotion-bd-f)
 map  / <Plug>(easymotion-sn)
 omap / <Plug>(easymotion-tn)
 
-imap jj <Esc>
-imap jo <Esc>o
 imap JO <Esc>O
-imap jl <Esc>ea
+imap jo <Esc>o
+imap jj <Esc>
 
-nmap <Leader>;	%
-nmap <leader>SS :setlocal spell! spelllang=es<CR>
-nmap <leader>SE :setlocal spell! spelllang=en_us<CR>
-nmap <leader>p mmgg=G`m
-nmap <S-u>	<C-r>
-nmap <silent> <leader>[ <Plug>(ale_previous_wrap)
-nmap <silent> <leader>] <Plug>(ale_next_wrap)
+inoremap <expr> jl search('\%#[]>)}''"]', 'n') ? '<Right>' : ''
+
+vmap s :s//g<Left><Left>
+
 nmap <C-m> `
 nmap <C-n><C-n> :GitGutterToggle<CR> :set rnu! <CR> :ALEToggle <CR>
+nmap <silent> <F1> :call NewExercise()<CR>
+nmap <silent> <F2> :call NavigateExercises(1)<CR>
+nmap <silent> <F3> :call NavigateExercises(0)<CR>
 nmap <S-j> :tabprevious<CR>
 nmap <S-k> :tabnext<CR>
-nmap <leader>s :w<CR>
-nmap <leader>t :bd<CR>
-nmap <leader>w :source $MYVIMRC<CR>
+nmap <S-u>	<C-r>
+nmap <leader>;	%
+nmap <leader>SE :setlocal spell! spelllang=en_us<CR>
+nmap <leader>SS :setlocal spell! spelllang=es<CR>
 nmap <leader>e :e $MYVIMRC<CR>
-nmap <F1> :call NewExercise()<CR>
-nmap <F2> :call NavigateExercises(1)<CR>
-nmap <F3> :call NavigateExercises(0)<CR>
+nmap <leader>p mmgg=G`m
+nmap <leader>q ZZ
+nmap <leader>s :w<CR>
+nmap <leader>w :source $MYVIMRC<CR>
+nmap <silent> <leader>[ <Plug>(ale_previous_wrap)
+nmap <silent> <leader>] <Plug>(ale_next_wrap)
 
 nnoremap <C-j> <C-d>
 nnoremap <C-k> <C-u>
 nnoremap <leader>cc <C-w><C-w>:q<CR>
-nnoremap S :%s//g<Left><Left>
+nnoremap <leader>n :NnnPicker '%:p:h'<CR>
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
+nnoremap S :%s//g<Left><Left>
 
 function! NewExercise()
     normal mm

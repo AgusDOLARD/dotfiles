@@ -2,12 +2,8 @@ snippet rec
 	${1:fn} :: ${2:a} -> ${3:a} -> ${4:a}
 	$1 ${5:x []} = ${6:[]}
 	$1 ${7:$5} = ${8:$1}
-	
-snippet eq
-	Eq a => ${0:a}
-
-# Especificos
-
+snippet curry
+	${1:Eq} a => ${0:a}
 snippet paratodoSnip
 	${1:paratodo} :: [a] -> (a -> Bool) -> Bool
 	$1 [] fun = True
