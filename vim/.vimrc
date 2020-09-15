@@ -80,11 +80,13 @@ let g:ycm_key_list_accept_completion = ['<C-l>']
 
 " ALE
 let g:ale_linters = {
+    \   'javascript': ['eslint'],
     \   'python': ['flake8'],
     \   'haskell': ['hlint'],
     \   'vim': ['vint'] 
     \ }
 let g:ale_fixers = {
+    \   'javascript': ['eslint'],
     \   '*': ['remove_trailing_lines'],
     \   'python': ['black'],
     \   'haskell': ['brittany'],
@@ -137,7 +139,7 @@ nmap <S-u>	<C-r>
 nmap <leader>;	%
 nmap <leader>SE :setlocal spell! spelllang=en_us<CR>
 nmap <leader>SS :setlocal spell! spelllang=es<CR>
-nmap <leader>e :e $MYVIMRC<CR>
+nmap <leader>e :tabnew $MYVIMRC<CR>
 nmap <leader>p mmgg=G`m
 nmap <leader>q ZZ
 nmap <leader>s :w<CR>

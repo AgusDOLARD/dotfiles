@@ -1,21 +1,16 @@
-alias c:="$WINSDD"
-alias d:="$WINHDD"
-alias arst="setxkbmap us -option caps:backspace -option altwin:swap_lalt_lwin"
-alias asdf="setxkbmap us colemak -option altwin:swap_lalt_lwin"
 alias byeOrphans='sudo pacman -Rns $(pacman -Qtdq)'
-alias cya="rm -rf"
-alias i3Conf="$EDITOR ~/.config/i3/config"
-alias mkd='mkdir -pv'
-alias n="nnn"
 alias p='sudo pacman'
-alias v=$EDITOR
-alias wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"
+alias cya="rm -rf"
+alias mkd='mkdir -p'
+alias mkcd='mkdir -p \!^; cd \!^1'
+alias n="nnn"
+alias svim="sudo -E vim"
 alias yolo="commit -m "$(curl -s http://whatthecommit.com/index.txt)""
 alias yt="youtube-dl -f mp4 -o '$WINHDD/Videos/%(title)s-%(uploader)s.%(ext)s' -ic" 
 alias ytm="youtube-dl --add-metadata --audio-quality 0 --audio-format mp3 --extract-audio -o '$WINHDD/Musica/%(title)s|%(uploader)s.%(ext)s' -ic"
-alias awsdebian="ssh -i $HOME/.ssh/debian.pem admin@ec2-15-228-28-1.sa-east-1.compute.amazonaws.com"
-alias tb="nc termbin.com 9999"
 alias wget='wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"'
+alias awsdebian="ssh -i $HOME/.ssh/debian.pem admin@ec2-15-228-28-1.sa-east-1.compute.amazonaws.com"
+alias awsftp="lftp ftp://agus@15.228.28.1"
 function h(){
 	DEFAULT=20
 	RES="history | tail -n ${1:-$DEFAULT} | sed 's/^\s*//'" 

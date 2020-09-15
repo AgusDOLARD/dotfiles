@@ -1,7 +1,7 @@
 ZSH_THEME="spaceship"
 HISTFILE=~/.cache/zsh/history
 
-plugins=(git z vi-mode sudo gitfast pip extract zsh-completions zsh-autosuggestions zsh-syntax-highlighting) 
+plugins=(git alias-tips z vi-mode sudo gitfast pip extract zsh-completions zsh-autosuggestions zsh-syntax-highlighting) 
 
 autoload -U compinit && compinit
 source $ZSH/oh-my-zsh.sh
