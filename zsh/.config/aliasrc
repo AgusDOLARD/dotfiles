@@ -1,8 +1,6 @@
 alias byeOrphans='sudo pacman -Rns $(pacman -Qtdq)'
 alias p='sudo pacman'
 alias cya="rm -rf"
-alias mkd='mkdir -p'
-alias mkcd='mkdir -p \!^; cd \!^1'
 alias n="nnn"
 alias svim="sudo -E vim"
 alias yolo='git commit -m "$(curl -s http://whatthecommit.com/index.txt)"'
