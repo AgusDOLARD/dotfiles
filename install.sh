@@ -20,4 +20,4 @@ rm $HOME/.zsh*
 
 git clone https://github.com/AgusDOLARD/dotfiles.git $HOME/.dots
 cd $HOME/.dots
-stow -vt ~ zsh
+stow -vt ~ zsh vim
