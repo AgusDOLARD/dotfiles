@@ -1,5 +1,4 @@
 ZSH_THEME="spaceship"
-HISTFILE=~/.cache/zsh/history
 
 plugins=(alias-tips z vi-mode sudo gitfast pip extract zsh-completions zsh-autosuggestions zsh-syntax-highlighting) 
 
