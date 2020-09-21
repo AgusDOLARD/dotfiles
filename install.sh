@@ -5,7 +5,7 @@ export ZSH_CUSTOM="$ZSH/custom"
 
 PACKAGES='zsh git stow vim curl'
 
-sudo ${1:'pacman -S'} $PACKAGES
+sudo pacman -S $PACKAGES
 
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
