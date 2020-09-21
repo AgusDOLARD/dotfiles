@@ -10,8 +10,7 @@ elif [ -x "$(command -v apt-get)" ]; then apt-get update && apt-get install $pac
 elif [ -x "$(command -v pacman)" ]; then pacman -Syy && pacman -S $packagesNeeded
 elif [ -x "$(command -v dnf)" ];     then dnf install $packagesNeeded
 elif [ -x "$(command -v zypper)" ];  then zypper install $packagesNeeded
-else echo "FAILED TO INSTALL PACKAGE: Package manager not found. You must manually install: $packagesNeeded">&2;
-fi
+else echo "FAILED TO INSTALL PACKAGE: Package manager not found. You must manually install: $packagesNeeded">&2; fi
 
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
