@@ -7,7 +7,7 @@ set incsearch
 set laststatus=2
 set nobackup
 set noshowmode
-set relativenumber
+set relativenumber number
 set tabstop=4 softtabstop=4
 set shiftwidth=4
 set expandtab
