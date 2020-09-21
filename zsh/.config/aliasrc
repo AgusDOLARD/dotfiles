@@ -1,9 +1,8 @@
 alias awsdebian="ssh -i $HOME/.ssh/debian.pem admin@ec2-15-228-28-1.sa-east-1.compute.amazonaws.com"
 alias awsftp="lftp ftp://agus@15.228.28.1"
 alias byeOrphans='sudo pacman -Rns $(pacman -Qtdq)'
-alias byeImages='docker rmi $(docker images -q) --force'
 alias cya="rm -rf"
-alias dps="docker ps"
+alias dps="docker ps -s"
 alias dstart="docker-compose up -d --build && docker-compose logs -f"
 alias dstop="docker-compose stop && docker-compose rm -f"
 alias n="nnn"
@@ -18,6 +17,13 @@ h(){
 	RES="history | tail -n ${1:-$DEFAULT} | sed 's/^\s*//'" 
 	[[ "$1" -gt "$DEFAULT" ]] && RES+="| less"
 	eval "$RES"
+}
+byeImages(){
+    if [ "$1" ]; then
+        docker images -a | grep $1 | awk '{print $3}' | xargs docker rmi -f
+    else
+        docker rmi $(docker images -q) --force
+    fi
 }
 gitpush() {
     git add .
