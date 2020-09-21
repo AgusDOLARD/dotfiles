@@ -3,14 +3,9 @@
 export ZSH="$HOME/.config/oh-my-zsh"
 export ZSH_CUSTOM="$ZSH/custom"
 
-packagesNeeded='zsh git stow vim curl'
+PACKAGES='zsh git stow vim curl'
 
-if [ -x "$(command -v apk)" ];       then apk update && apk add --no-cache $packagesNeeded
-elif [ -x "$(command -v apt-get)" ]; then apt-get update && apt-get install $packagesNeeded
-elif [ -x "$(command -v pacman)" ]; then pacman -Syy && pacman -S $packagesNeeded
-elif [ -x "$(command -v dnf)" ];     then dnf install $packagesNeeded
-elif [ -x "$(command -v zypper)" ];  then zypper install $packagesNeeded
-else echo "FAILED TO INSTALL PACKAGE: Package manager not found. You must manually install: $packagesNeeded">&2; fi
+sudo ${1:'pacman -S'} $PACKAGES
 
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
