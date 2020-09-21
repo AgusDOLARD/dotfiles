@@ -3,7 +3,7 @@ alias p='sudo pacman'
 alias cya="rm -rf"
 alias n="nnn"
 alias svim="sudo -E vim"
-alias -g yolo="$(curl -s http://whatthecommit.com/index.txt)"
+alias -g yolo="curl -s http://whatthecommit.com/index.txt"
 alias yt="youtube-dl -f mp4 -o '$WINHDD/Videos/%(title)s-%(uploader)s.%(ext)s' -ic" 
 alias ytm="youtube-dl --add-metadata --audio-quality 0 --audio-format mp3 --extract-audio -o '$WINHDD/Musica/%(title)s|%(uploader)s.%(ext)s' -ic"
 alias wget='wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"'
