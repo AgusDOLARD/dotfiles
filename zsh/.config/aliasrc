@@ -1,14 +1,17 @@
+alias awsdebian="ssh -i $HOME/.ssh/debian.pem admin@ec2-15-228-28-1.sa-east-1.compute.amazonaws.com"
+alias awsftp="lftp ftp://agus@15.228.28.1"
 alias byeOrphans='sudo pacman -Rns $(pacman -Qtdq)'
-alias p='sudo pacman'
 alias cya="rm -rf"
+alias dps="docker ps"
+alias dstart="docker-compose up -d --build && docker-compose logs -f"
+alias dstop="docker-compose stop && docker-compose rm -f"
 alias n="nnn"
+alias p='sudo pacman'
 alias svim="sudo -E vim"
+alias wget='wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"'
 alias yolo="gitpush $(curl -s http://whatthecommit.com/index.txt)"
 alias yt="youtube-dl -f mp4 -o '$WINHDD/Videos/%(title)s-%(uploader)s.%(ext)s' -ic" 
 alias ytm="youtube-dl --add-metadata --audio-quality 0 --audio-format mp3 --extract-audio -o '$WINHDD/Musica/%(title)s|%(uploader)s.%(ext)s' -ic"
-alias wget='wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"'
-alias awsdebian="ssh -i $HOME/.ssh/debian.pem admin@ec2-15-228-28-1.sa-east-1.compute.amazonaws.com"
-alias awsftp="lftp ftp://agus@15.228.28.1"
 h(){
 	DEFAULT=20
 	RES="history | tail -n ${1:-$DEFAULT} | sed 's/^\s*//'" 

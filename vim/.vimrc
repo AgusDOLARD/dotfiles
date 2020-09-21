@@ -17,6 +17,7 @@ set undofile
 set noswapfile
 set termguicolors
 set viminfo+='1000,n$XDG_DATA_HOME/vim/viminfo'
+set pastetoggle=<F12>
 
 call plug#begin('~/.vim/plugged')
 
