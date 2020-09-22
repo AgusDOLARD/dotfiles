@@ -130,7 +130,7 @@ inoremap <expr> jl search('\%#[]>)}''"]', 'n') ? '<Right>' : ''
 vmap s :s//g<Left><Left>
 
 nmap <C-m> `
-nmap <C-n><C-n> :GitGutterToggle<CR> :set rnu! <CR> :ALEToggle <CR>
+nmap <C-n><C-n> :GitGutterToggle<CR> :set rnu! <CR> :set number! <CR> :ALEToggle <CR>
 nmap <silent> <F1> :call NewExercise()<CR>
 nmap <silent> <F2> :call NavigateExercises(1)<CR>
 nmap <silent> <F3> :call NavigateExercises(0)<CR>
