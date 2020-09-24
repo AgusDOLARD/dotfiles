@@ -1,6 +1,7 @@
 alias awsdebian="ssh -i $HOME/.ssh/debian.pem admin@ec2-15-228-28-1.sa-east-1.compute.amazonaws.com"
 alias awsftp="lftp ftp://agus@15.228.28.1"
 alias byeOrphans='sudo pacman -Rns $(pacman -Qtdq)'
+alias compose='docker-compose'
 alias cya="rm -rf"
 alias dps="docker ps --format 'table {{.ID}}\t{{.Image}}\t{{.Names}}\t{{.Size}}\t{{.Status}}'"
 alias dim="docker images -a"
