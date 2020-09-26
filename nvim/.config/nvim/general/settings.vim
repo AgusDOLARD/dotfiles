@@ -1,25 +1,24 @@
 syntax on
 filetype plugin indent on
-set scrolloff=5
-set hlsearch
+
+set background=dark
 set encoding=utf-8
+set expandtab
+set hlsearch
 set incsearch
 set laststatus=2
 set nobackup
 set noshowmode
+set noswapfile
 set relativenumber number
-set tabstop=4 softtabstop=4
+set scrolloff=5
 set shiftwidth=4
-set expandtab
 set smartindent
+set tabstop=4 softtabstop=4
+set termguicolors
 set undodir=$XDG_DATA_HOME/nvim/undodir
 set undofile
-set noswapfile
-set termguicolors
 set viminfo+='1000,n$XDG_DATA_HOME/nvim/viminfo'
-set pastetoggle=<M-p>
-
-set background=dark
 colorscheme gruvbox
 
 let g:timeoutlen=100

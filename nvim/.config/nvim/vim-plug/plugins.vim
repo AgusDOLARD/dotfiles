@@ -1,29 +1,30 @@
 call plug#begin('~/.config/nvim/autoload/plugged')
 
     Plug 'mcchrish/nnn.vim'
-	Plug 'neovimhaskell/haskell-vim'
+    Plug 'neovimhaskell/haskell-vim'
     Plug 'mhinz/vim-startify'
     Plug 'dense-analysis/ale'
-	Plug 'SirVer/ultisnips'
+    Plug 'SirVer/ultisnips'
     Plug 'posva/vim-vue'
-	Plug 'honza/vim-snippets'
-	Plug 'airblade/vim-gitgutter'
-	Plug 'ap/vim-css-color'
-	Plug 'jiangmiao/auto-pairs'
+    Plug 'honza/vim-snippets'
+    Plug 'airblade/vim-gitgutter'
+    Plug 'ap/vim-css-color'
+    Plug 'jiangmiao/auto-pairs'
     Plug 'itchyny/lightline.vim'
-	Plug 'machakann/vim-highlightedyank'
-	Plug 'tpope/vim-commentary'
-	Plug 'tpope/vim-surround'
+    Plug 'machakann/vim-highlightedyank'
+    Plug 'tpope/vim-commentary'
+    Plug 'tpope/vim-surround'
     Plug 'easymotion/vim-easymotion'
-	Plug 'ycm-core/YouCompleteMe'
+    Plug 'ycm-core/YouCompleteMe'
     Plug 'morhetz/gruvbox'
     Plug 'maximbaz/lightline-ale'
 
 call plug#end()
 
 if !exists('##TextYankPost')
-	  map y <Plug>(highlightedyank)
+    map y <Plug>(highlightedyank)
 endif
+
 
 " NNN
 let g:nnn#layout = { 'window': { 'width': 0.8, 'height': 0.6, 'highlight': 'Debug'  }  }
@@ -49,11 +50,11 @@ let g:ycm_key_list_accept_completion = ['<M-l>']
 " Startify
 let g:startify_custom_header = []
 let g:startify_lists = [
-          \ { 'type': 'files',     'header': ['   Files']                        },
-          \ { 'type': 'dir',       'header': ['   Current Directory '. getcwd()] },
-          \ { 'type': 'sessions',  'header': ['   Sessions']                     },
-          \ { 'type': 'bookmarks', 'header': ['   Bookmarks']                    },
-          \ ]
+            \ { 'type': 'files',     'header': ['   Files']                        },
+            \ { 'type': 'dir',       'header': ['   Current Directory '. getcwd()] },
+            \ { 'type': 'sessions',  'header': ['   Sessions']                     },
+            \ { 'type': 'bookmarks', 'header': ['   Bookmarks']                    },
+            \ ]
 let g:startify_bookmarks = [
             \ '~/.config/nvim/init.vim'  ,
             \ '~/.config/nvim/vim-plug/plugins.vim',
@@ -63,42 +64,42 @@ let g:startify_bookmarks = [
 
 " ALE
 let g:ale_linters = {
-    \   'javascript': ['eslint'],
-    \   'typescript': ['eslint'],
-    \   'vue': ['eslint'],
-    \   'json': ['jsonlint'],
-    \   'python': ['flake8'],
-    \   'haskell': ['hlint'],
-    \   'vim': ['vint'] 
-    \ }
+            \   'javascript': ['eslint'],
+            \   'typescript': ['eslint'],
+            \   'vue': ['eslint'],
+            \   'json': ['jsonlint'],
+            \   'python': ['flake8'],
+            \   'haskell': ['hlint'],
+            \   'vim': ['vint'] 
+            \ }
 let g:ale_fixers = {
-    \   'javascript': ['prettier'],
-    \   'typescript': ['prettier'],
-    \   'vue': ['prettier'],
-    \   'json': ['prettier'],
-    \   'css': ['prettier'],
-    \   '*': ['remove_trailing_lines'],
-    \   'python': ['black'],
-    \   'haskell': ['brittany'],
-    \ }
+            \   'javascript': ['prettier'],
+            \   'typescript': ['prettier'],
+            \   'vue': ['prettier'],
+            \   'json': ['prettier'],
+            \   'css': ['prettier'],
+            \   '*': ['remove_trailing_lines'],
+            \   'python': ['black'],
+            \   'haskell': ['brittany'],
+            \ }
 let g:ale_fix_on_save = 1
 
 " Lightline
 let g:lightline = { 'colorscheme': 'gruvbox'}
 let g:lightline.component_expand = {
-      \  'linter_checking': 'lightline#ale#checking',
-      \  'linter_infos': 'lightline#ale#infos',
-      \  'linter_warnings': 'lightline#ale#warnings',
-      \  'linter_errors': 'lightline#ale#errors',
-      \  'linter_ok': 'lightline#ale#ok'
-      \  }
+            \  'linter_checking': 'lightline#ale#checking',
+            \  'linter_infos': 'lightline#ale#infos',
+            \  'linter_warnings': 'lightline#ale#warnings',
+            \  'linter_errors': 'lightline#ale#errors',
+            \  'linter_ok': 'lightline#ale#ok'
+            \  }
 let g:lightline.component_type = {
-      \     'linter_checking': 'right',
-      \     'linter_infos': 'right',
-      \     'linter_warnings': 'warning',
-      \     'linter_errors': 'error',
-      \     'linter_ok': 'right',
-      \ }
+            \     'linter_checking': 'right',
+            \     'linter_infos': 'right',
+            \     'linter_warnings': 'warning',
+            \     'linter_errors': 'error',
+            \     'linter_ok': 'right',
+            \ }
 let g:lightline.active = { 'right': [[ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_infos', 'linter_ok'  ]]  }
 
 
