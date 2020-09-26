@@ -1,25 +1,4 @@
-syntax on
-filetype plugin indent on
-set scrolloff=5
-set hlsearch
-set encoding=utf-8
-set incsearch
-set laststatus=2
-set nobackup
-set noshowmode
-set relativenumber number
-set tabstop=4 softtabstop=4
-set shiftwidth=4
-set expandtab
-set smartindent
-set undodir=$XDG_DATA_HOME/vim/undodir
-set undofile
-set noswapfile
-set termguicolors
-set viminfo+='1000,n$XDG_DATA_HOME/vim/viminfo'
-set pastetoggle=<F12>
-
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.config/nvim/autoload/plugged')
 
     Plug 'mcchrish/nnn.vim'
 	Plug 'neovimhaskell/haskell-vim'
@@ -41,24 +20,9 @@ call plug#begin('~/.vim/plugged')
 
 call plug#end()
 
-set background=dark
-colorscheme gruvbox
-
 if !exists('##TextYankPost')
 	  map y <Plug>(highlightedyank)
 endif
-
-autocmd InsertEnter * norm zz
-" :au BufAdd,BufNewFile,BufRead * nested tab sball
-
-
-let g:timeoutlen=100
-let g:termsize=10*0
-let g:plug_window = 'noautocmd vertical topleft new'
-let mapleader = ' '
-let &t_SI.="\e[6 q" "SI = INSERT mode
-let &t_SR.="\e[3 q" "SR = REPLACE mode
-let &t_EI.="\e[1 q" "EI = NORMAL mode]
 
 " NNN
 let g:nnn#layout = { 'window': { 'width': 0.8, 'height': 0.6, 'highlight': 'Debug'  }  }
@@ -128,49 +92,3 @@ map ff <Plug>(easymotion-bd-fl)
 map F <Plug>(easymotion-bd-f)
 map  / <Plug>(easymotion-sn)
 omap / <Plug>(easymotion-tn)
-
-imap JO <Esc>O
-imap jo <Esc>o
-imap jj <Esc>
-
-inoremap <expr> jl search('\%#[]>)}''"]', 'n') ? '<Right>' : ''
-
-vmap s :s//g<Left><Left>
-
-nmap <C-m> `
-nmap <C-n><C-n> :GitGutterToggle<CR> :set rnu! <CR> :set number! <CR> :ALEToggle <CR>
-nmap <silent> <F1> :call NewExercise()<CR>
-nmap <silent> <F2> :call NavigateExercises(1)<CR>
-nmap <silent> <F3> :call NavigateExercises(0)<CR>
-nmap <S-j> :tabprevious<CR>
-nmap <S-k> :tabnext<CR>
-nmap <S-u>	<C-r>
-nmap <leader>;	%
-nmap <leader>SE :setlocal spell! spelllang=en_us<CR>
-nmap <leader>SS :setlocal spell! spelllang=es<CR>
-nmap <leader>e :tabnew $MYVIMRC<CR>
-nmap <leader>p mmgg=G`m
-nmap <leader>q ZZ
-nmap <leader>s :w<CR>
-nmap <leader>w :source $MYVIMRC<CR>
-nmap <silent> <leader>[ <Plug>(ale_previous_wrap)
-nmap <silent> <leader>] <Plug>(ale_next_wrap)
-
-nnoremap <C-j> <C-d>
-nnoremap <C-k> <C-u>
-nnoremap <leader>cc <C-w><C-w>:q<CR>
-nnoremap <leader>n :NnnPicker '%:p:h'<CR>
-nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
-nnoremap S :%s//g<Left><Left>
-
-function! NewExercise()
-    normal mm
-    execute ":g/--\\s.*\\s--/y"
-    execute "normal! `mP \<C-a>j"
-endfunction
-
-function! NavigateExercises(dir)
-    execute "/--\\s.*\\s--/"
-    if a:dir | execute 'normal NN' | endif
-    normal zt
-endfunction

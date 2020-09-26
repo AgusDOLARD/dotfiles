@@ -1,13 +1,15 @@
 alias awsdebian="ssh -i $HOME/.ssh/debian.pem admin@ec2-15-228-28-1.sa-east-1.compute.amazonaws.com"
 alias awsftp="lftp ftp://agus@15.228.28.1"
+alias byeImages="docker rmi $(docker images -q) --force"
 alias byeOrphans='sudo pacman -Rns $(pacman -Qtdq)'
 alias compose='docker-compose'
 alias cya="rm -rf"
 alias dps="docker ps --format 'table {{.ID}}\t{{.Image}}\t{{.Names}}\t{{.Size}}\t{{.Status}}'"
-alias dim="docker images -a"
+alias prettier="cp $HOME/.dots/extraConf/.prettierrc . && npm i prettier -D"
 alias n="nnn"
 alias p='sudo pacman'
-alias svim="sudo -E vim"
+alias svim="sudo -E nvim"
+alias vim="nvim"
 alias wget='wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"'
 alias yolo="gitpush $(curl -s http://whatthecommit.com/index.txt)"
 alias yt="youtube-dl -f mp4 -o '$WINHDD/Videos/%(title)s-%(uploader)s.%(ext)s' -ic" 
@@ -18,11 +20,11 @@ h(){
 	[[ "$1" -gt "$DEFAULT" ]] && RES+="| less"
 	eval "$RES"
 }
-byeImages(){
+dim(){
     if [ "$1" ]; then
         docker images -a | grep $1 | awk '{print $3}' | xargs docker rmi -f
     else
-        docker rmi $(docker images -q) --force
+        docker images -a
     fi
 }
 gitpush() {

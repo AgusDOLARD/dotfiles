@@ -18,7 +18,7 @@ export _Z_DATA="$XDG_CACHE_HOME/z"
 export HISTFILE="$XDG_CACHE_HOME/zsh/history"
 
 # Apps
-export EDITOR="vim"
+export EDITOR="nvim"
 export READER="zathura"
 
 export WINSDD='/mnt/c/Users/agust'
