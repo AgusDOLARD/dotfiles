@@ -1,43 +1,53 @@
 call plug#begin('~/.config/nvim/autoload/plugged')
 
-    Plug 'mcchrish/nnn.vim'
-    Plug 'neovimhaskell/haskell-vim'
-    Plug 'mhinz/vim-startify'
-    Plug 'dense-analysis/ale'
     Plug 'SirVer/ultisnips'
-    Plug 'posva/vim-vue'
-    Plug 'honza/vim-snippets'
     Plug 'airblade/vim-gitgutter'
+    Plug 'airblade/vim-rooter'
     Plug 'ap/vim-css-color'
+    Plug 'dense-analysis/ale'
+    Plug 'easymotion/vim-easymotion'
+    Plug 'honza/vim-snippets'
+    Plug 'vim-airline/vim-airline'
     Plug 'jiangmiao/auto-pairs'
-    Plug 'itchyny/lightline.vim'
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'junegunn/fzf.vim'
     Plug 'machakann/vim-highlightedyank'
+    Plug 'mcchrish/nnn.vim'
+    Plug 'mhinz/vim-startify'
+    Plug 'morhetz/gruvbox'
+    Plug 'neovimhaskell/haskell-vim'
+    Plug 'posva/vim-vue'
     Plug 'tpope/vim-commentary'
     Plug 'tpope/vim-surround'
-    Plug 'easymotion/vim-easymotion'
     Plug 'ycm-core/YouCompleteMe'
-    Plug 'morhetz/gruvbox'
-    Plug 'maximbaz/lightline-ale'
 
 call plug#end()
+
+colorscheme gruvbox
 
 if !exists('##TextYankPost')
     map y <Plug>(highlightedyank)
 endif
 
+" Airline
+let g:airline_theme = 'gruvbox'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#tabline#right_sep = ' '
+let g:airline#extensions#tabline#right_alt_sep = '|'
+let g:airline#extensions#tabline#formatter = 'unique_tail'
+
+" FZF
+let g:fzf_history_dir = '~/.local/share/fzf-history'
+let g:fzf_preview_window = 'right:60%'
 
 " NNN
 let g:nnn#layout = { 'window': { 'width': 0.8, 'height': 0.6, 'highlight': 'Debug'  }  }
-let g:nnn#action = { 'e': 'tab split', 'o': 'tab split' }
+let g:nnn#action = { 'e': 'edit', 'o': 'edit' }
 
 " AutoPairs
 let g:AutoPairsShortcutToggle = ''
-
-" GitGutter
-highlight GitGutterAdd    guifg=#98971a ctermfg=2
-highlight GitGutterChange guifg=#d79921 ctermfg=2
-highlight GitGutterDelete guifg=#cc241d ctermfg=2
-highlight! link SignColumn LineNr
 
 " Ultisnips 
 let g:UltiSnipsExpandTrigger = '<M-l>'
@@ -63,6 +73,7 @@ let g:startify_bookmarks = [
             \ ]
 
 " ALE
+let g:airline#extensions#ale#enabled = 1
 let g:ale_linters = {
             \   'javascript': ['eslint'],
             \   'typescript': ['eslint'],
@@ -84,24 +95,6 @@ let g:ale_fixers = {
             \ }
 let g:ale_fix_on_save = 1
 
-" Lightline
-let g:lightline = { 'colorscheme': 'gruvbox'}
-let g:lightline.component_expand = {
-            \  'linter_checking': 'lightline#ale#checking',
-            \  'linter_infos': 'lightline#ale#infos',
-            \  'linter_warnings': 'lightline#ale#warnings',
-            \  'linter_errors': 'lightline#ale#errors',
-            \  'linter_ok': 'lightline#ale#ok'
-            \  }
-let g:lightline.component_type = {
-            \     'linter_checking': 'right',
-            \     'linter_infos': 'right',
-            \     'linter_warnings': 'warning',
-            \     'linter_errors': 'error',
-            \     'linter_ok': 'right',
-            \ }
-let g:lightline.active = { 'right': [[ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_infos', 'linter_ok'  ]]  }
-
 
 " EasyMotion maps
 let g:EasyMotion_use_smartsign_us = 1
@@ -111,4 +104,3 @@ map ff <Plug>(easymotion-bd-fl)
 map F <Plug>(easymotion-bd-f)
 map  / <Plug>(easymotion-sn)
 omap / <Plug>(easymotion-tn)
-nmap <leader>f <Plug>(easymotion-s2)

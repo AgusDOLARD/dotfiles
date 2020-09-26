@@ -4,6 +4,8 @@ plugins=(alias-tips z vi-mode sudo gitfast pip extract zsh-completions zsh-autos
 
 autoload -U compinit && compinit
 source $ZSH/oh-my-zsh.sh
+source /usr/share/fzf/completion.zsh
+source /usr/share/fzf/key-bindings.zsh
 
 [ -f "$HOME/.config/aliasrc"  ] && source "$HOME/.config/aliasrc"
 
