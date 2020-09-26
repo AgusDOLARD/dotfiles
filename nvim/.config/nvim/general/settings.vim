@@ -17,7 +17,7 @@ set undofile
 set noswapfile
 set termguicolors
 set viminfo+='1000,n$XDG_DATA_HOME/nvim/viminfo'
-set pastetoggle=<F12>
+set pastetoggle=<M-p>
 
 set background=dark
 colorscheme gruvbox

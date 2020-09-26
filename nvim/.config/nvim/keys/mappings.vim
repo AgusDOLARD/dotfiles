@@ -4,8 +4,6 @@ imap JO <Esc>O
 imap jo <Esc>o
 imap jj <Esc>
 
-inoremap <expr> jl search('\%#[]>)}''"]', 'n') ? '<Right>' : ''
-
 vmap s :s//g<Left><Left>
 
 nmap <C-m> `

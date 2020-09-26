@@ -2,6 +2,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     Plug 'mcchrish/nnn.vim'
 	Plug 'neovimhaskell/haskell-vim'
+    Plug 'mhinz/vim-startify'
     Plug 'dense-analysis/ale'
 	Plug 'SirVer/ultisnips'
     Plug 'posva/vim-vue'
@@ -26,7 +27,10 @@ endif
 
 " NNN
 let g:nnn#layout = { 'window': { 'width': 0.8, 'height': 0.6, 'highlight': 'Debug'  }  }
-let g:nnn#action = { 'e': 'tab split' }
+let g:nnn#action = { 'e': 'tab split', 'o': 'tab split' }
+
+" AutoPairs
+let g:AutoPairsShortcutToggle = ''
 
 " GitGutter
 highlight GitGutterAdd    guifg=#98971a ctermfg=2
@@ -35,14 +39,27 @@ highlight GitGutterDelete guifg=#cc241d ctermfg=2
 highlight! link SignColumn LineNr
 
 " Ultisnips 
-let g:UltiSnipsExpandTrigger = '<Tab>'
+let g:UltiSnipsExpandTrigger = '<M-l>'
 let g:UltiSnipsJumpForwardTrigger = '<Tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<S-Tab>'
 
 " YouCompleteMe
-let g:ycm_key_list_select_completion = ['<C-j>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-k>', '<Up>']
-let g:ycm_key_list_accept_completion = ['<C-l>']
+let g:ycm_key_list_accept_completion = ['<M-l>']
+
+" Startify
+let g:startify_custom_header = []
+let g:startify_lists = [
+          \ { 'type': 'files',     'header': ['   Files']                        },
+          \ { 'type': 'dir',       'header': ['   Current Directory '. getcwd()] },
+          \ { 'type': 'sessions',  'header': ['   Sessions']                     },
+          \ { 'type': 'bookmarks', 'header': ['   Bookmarks']                    },
+          \ ]
+let g:startify_bookmarks = [
+            \ '~/.config/nvim/init.vim'  ,
+            \ '~/.config/nvim/vim-plug/plugins.vim',
+            \ '~/.config/nvim/keys/mappings.vim'  ,
+            \ '~/.config/nvim/general/settings.vim',
+            \ ]
 
 " ALE
 let g:ale_linters = {
@@ -87,8 +104,10 @@ let g:lightline.active = { 'right': [[ 'linter_checking', 'linter_errors', 'lint
 
 " EasyMotion maps
 let g:EasyMotion_use_smartsign_us = 1
+let g:EasyMotion_smartcase = 1
 map f <Plug>(easymotion-prefix)
 map ff <Plug>(easymotion-bd-fl)
 map F <Plug>(easymotion-bd-f)
 map  / <Plug>(easymotion-sn)
 omap / <Plug>(easymotion-tn)
+nmap <leader>f <Plug>(easymotion-s2)
