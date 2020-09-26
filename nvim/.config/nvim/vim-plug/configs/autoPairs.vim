@@ -1,0 +1,2 @@
+" AutoPairs
+let g:AutoPairsShortcutToggle = ''
