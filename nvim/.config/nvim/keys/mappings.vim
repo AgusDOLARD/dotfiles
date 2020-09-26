@@ -9,19 +9,19 @@ vmap > >gv
 
 nmap <C-m> `
 nmap <C-n><C-n> :GitGutterToggle<CR> :set rnu! <CR> :set number! <CR> :ALEToggle <CR>
-nmap <S-j> :bprevious<CR>
-nmap <S-k> :bnext<CR>
+nmap <F12> :set invpaste<CR>
+nmap <S-j> :tabprevious<CR>
+nmap <S-k> :tabnext<CR>
 nmap <S-u>	<C-r>
-nmap <C-p> :set invpaste<CR>
 nmap <leader>;	%
 nmap <leader>SE :setlocal spell! spelllang=en_us<CR>
 nmap <leader>SS :setlocal spell! spelllang=es<CR>
-nmap <leader>e :e $MYVIMRC<CR>
+nmap <leader>e :tabnew $MYVIMRC<CR>
 nmap <leader>p :GFiles<CR>
 nmap <leader>P :Files<CR>
-nmap <leader>q :bd<CR>
+nmap <leader>q ZZ
 nmap <leader>s :w<CR>
-nmap <leader>w :source $MYVIMRC<CR>
+nmap <leader>w :source ~/.config/nvim/init.vim<CR>
 nmap <silent> <F1> :call NewExercise()<CR>
 nmap <silent> <F2> :call NavigateExercises(1)<CR>
 nmap <silent> <F3> :call NavigateExercises(0)<CR>

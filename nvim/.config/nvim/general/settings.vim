@@ -19,6 +19,7 @@ set termguicolors
 set undodir=$XDG_DATA_HOME/nvim/undodir
 set undofile
 set viminfo+='1000,n$XDG_DATA_HOME/nvim/viminfo'
+colorscheme gruvbox
 
 let g:timeoutlen=100
 let g:termsize=10*0
