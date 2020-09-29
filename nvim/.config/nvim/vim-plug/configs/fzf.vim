@@ -26,3 +26,7 @@ command! -bang -nargs=* Rg
   \           : fzf#vim#with_preview({'options': '--delimiter : --nth 4.. -e'}, 'right:50%', '?'),
   \   <bang>0
   \ )
+
+nmap <leader>P :Files<CR>
+nmap <leader>p :GFiles<CR>
+nnoremap <leader>g :Rg<CR>
