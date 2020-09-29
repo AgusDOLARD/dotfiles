@@ -3,7 +3,7 @@
 export ZSH="$HOME/.config/oh-my-zsh"
 export ZSH_CUSTOM="$ZSH/custom"
 
-PACKAGES='zsh git stow vim curl'
+PACKAGES='zsh git stow neovim curl'
 
 sudo pacman -S $PACKAGES
 
@@ -22,4 +22,4 @@ rm $HOME/.zsh*
 
 git clone https://github.com/AgusDOLARD/dotfiles.git $HOME/.dots
 cd $HOME/.dots
-stow -vt ~ zsh vim
+stow -vt ~ zsh nvim

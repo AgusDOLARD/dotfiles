@@ -14,12 +14,6 @@ alias wget='wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"'
 alias yolo="gitpush $(curl -s http://whatthecommit.com/index.txt)"
 alias yt="youtube-dl -f mp4 -o '$WINHDD/Videos/%(title)s-%(uploader)s.%(ext)s' -ic" 
 alias ytm="youtube-dl --add-metadata --audio-quality 0 --audio-format mp3 --extract-audio -o '$WINHDD/Musica/%(title)s|%(uploader)s.%(ext)s' -ic"
-h(){
-	DEFAULT=20
-	RES="history | tail -n ${1:-$DEFAULT} | sed 's/^\s*//'" 
-	[[ "$1" -gt "$DEFAULT" ]] && RES+="| less"
-	eval "$RES"
-}
 dim(){
     if [ "$1" ]; then
         docker images -a | grep $1 | awk '{print $3}' | xargs docker rmi -f
