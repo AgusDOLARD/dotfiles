@@ -3,7 +3,6 @@ filetype plugin indent on
 
 set background=dark
 set encoding=utf-8
-set expandtab
 set hlsearch
 set incsearch
 set laststatus=2
@@ -31,4 +30,7 @@ let &t_SR.="\e[3 q" "SR = REPLACE mode
 let &t_EI.="\e[1 q" "EI = NORMAL mode]
 
 autocmd InsertEnter * norm zz
-" :au BufAdd,BufNewFile,BufRead * nested tab sball
+" au BufNewFile,BufRead * nested
+"   \ if &buftype != "help" |
+"   \   tab sball |
+"   \ endif
