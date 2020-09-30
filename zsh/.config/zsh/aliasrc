@@ -5,6 +5,8 @@ alias byeOrphans='sudo pacman -Rns $(pacman -Qtdq)'
 alias compose='docker-compose'
 alias cya="rm -rf"
 alias dps="docker ps --format 'table {{.ID}}\t{{.Image}}\t{{.Names}}\t{{.Size}}\t{{.Status}}'"
+alias gch="git checkout"
+alias gss="git status"
 alias l="ls -al"
 alias ls='ls --color=always'
 alias n="nnn"

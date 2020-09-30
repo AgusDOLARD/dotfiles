@@ -5,6 +5,9 @@ dim(){
         docker images -a
     fi
 }
+md () {
+	mkdir -p "$@" && cd "$@"
+}
 gitpush() {
     git add .
     git commit -m "$*"
