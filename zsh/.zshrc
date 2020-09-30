@@ -3,7 +3,6 @@ autoload -U colors && colors
 
 _comp_options+=(globdots)
 
-setopt correct
 setopt autocd
 
 zstyle ':completion:*' menu select
@@ -20,6 +19,7 @@ bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
 bindkey -M viins jj vi-cmd-mode 
+
 
 # ci"
 autoload -U select-quoted

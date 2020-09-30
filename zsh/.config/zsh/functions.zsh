@@ -5,7 +5,7 @@ dim(){
         docker images -a
     fi
 }
-md () {
+md() {
 	mkdir -p "$@" && cd "$@"
 }
 gitpush() {
