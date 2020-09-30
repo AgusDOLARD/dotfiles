@@ -1,13 +1,13 @@
-ZSH_THEME="spaceship"
-
-plugins=(alias-tips z vi-mode sudo gitfast pip extract zsh-completions zsh-autosuggestions zsh-syntax-highlighting) 
-
 autoload -U compinit && compinit
-source $ZSH/oh-my-zsh.sh
-source /usr/share/fzf/completion.zsh
-source /usr/share/fzf/key-bindings.zsh
+autoload -U colors && colors
 
-[ -f "$HOME/.config/aliasrc"  ] && source "$HOME/.config/aliasrc"
+_comp_options+=(globdots)
+
+zstyle ':completion:*' menu select
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+
+zmodload zsh/complist
 
 # Enable ViMode
 bindkey -v
@@ -35,3 +35,12 @@ for m in visual viopp; do
     bindkey -M $m $c select-bracketed
   done
 done
+
+for f in $ZSHPLUGS/*; do source "$f"; done
+source $ZSHPLUGS/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $ZSHPLUGS/zsh-completions/zsh-completions.plugin.zsh
+source $ZSHPLUGS/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+source $ZSHPLUGS/zsh-you-should-use/you-should-use.plugin.zsh
+source $ZSHPLUGS/spaceship-prompt/spaceship.zsh
+source /usr/share/fzf/completion.zsh
+source /usr/share/fzf/key-bindings.zsh

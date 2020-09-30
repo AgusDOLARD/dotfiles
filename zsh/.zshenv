@@ -3,7 +3,6 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 
-# export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export MACHINE_STORAGE_PATH="$XDG_DATA_HOME"/docker-machine
@@ -13,9 +12,15 @@ export NUGET_PACKAGES="$XDG_CACHE_HOME"/NuGetPackages
 export PYLINTHOME="$XDG_CACHE_HOME/pylint"
 export WGETRC="$XDG_CONFIG_HOME/wgetrc"
 export XINITRC="$XDG_CONFIG_HOME/xinitrc"
-export ZSH="$XDG_CONFIG_HOME/oh-my-zsh"
-export _Z_DATA="$XDG_CACHE_HOME/z"
+
+# ZSH
 export HISTFILE="$XDG_CACHE_HOME/zsh/history"
+export SAVEHIST=10000
+export ZSHPLUGS="$XDG_CONFIG_HOME/zsh"
+export _Z_DATA="$XDG_CACHE_HOME/z"
+export LS_COLORS='no=00;37:fi=00:di=00;33:ln=04;36:pi=40;33:so=01;35:bd=40;33;01:'
+# export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+# export ZSH="$XDG_CONFIG_HOME/oh-my-zsh"
 
 # Apps
 export EDITOR="nvim"
