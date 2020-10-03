@@ -1,6 +1,6 @@
 imap JO <Esc>O
 imap jj <Esc>
-imap jo <Esc>o
+" imap jo <Esc>o
 
 nmap <C-m> `
 nmap <C-n><C-n> :GitGutterToggle<CR> :set rnu! <CR> :set number! <CR> :ALEToggle <CR>

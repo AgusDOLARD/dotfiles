@@ -1,6 +1,6 @@
 call plug#begin('~/.config/nvim/autoload/plugged')
 
-    " Plug 'neovimhaskell/haskell-vim'
+    Plug 'neovimhaskell/haskell-vim'
     " Plug 'posva/vim-vue'
     Plug 'SirVer/ultisnips'
     Plug 'airblade/vim-gitgutter'
