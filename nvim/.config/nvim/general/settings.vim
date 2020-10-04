@@ -3,20 +3,17 @@ filetype plugin indent on
 
 set background=dark
 set encoding=utf-8
+set autoindent noexpandtab tabstop=4 shiftwidth=4
+set relativenumber number
 set hlsearch
 set incsearch
-set laststatus=2
 set nobackup
 set noshowmode
 set noswapfile
-set relativenumber number
 set scrolloff=5
-set shiftwidth=4
-set smartindent
-set tabstop=4 softtabstop=4
 set termguicolors
-set undodir=$XDG_DATA_HOME/nvim/undodir
 set undofile
+set undodir=$XDG_DATA_HOME/nvim/undodir
 set viminfo+='1000,n$XDG_DATA_HOME/nvim/viminfo'
 set pastetoggle=<F12>
 

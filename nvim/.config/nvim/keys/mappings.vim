@@ -13,7 +13,7 @@ map <C-A> ggVG
 map Q <nop>
 map q: <nop>
 
-nmap <M-m> `m
+nmap <M-m> `
 nmap <S-j> :tabprevious<CR>
 nmap <S-k> :tabnext<CR>
 nmap <S-u>	<C-r>
@@ -37,8 +37,6 @@ nnoremap <leader>cc <C-w><C-w>:q<CR>
 nnoremap <silent> <BS> :nohlsearch<Bar>:echo<CR>
 nnoremap S :%s//g<Left><Left>
 nnoremap Y y$
-nnoremap gg mmgg
-nnoremap G mmG
 
 noremap ) $
 
