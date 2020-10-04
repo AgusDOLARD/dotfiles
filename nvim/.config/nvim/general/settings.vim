@@ -31,10 +31,10 @@ let &t_EI.="\e[1 q" "EI = NORMAL mode]
 
 autocmd InsertEnter * norm zz
 
-" Windows Yank
-if system('uname -r') =~ "Microsoft"
-  augroup Yank
-    autocmd!
-    autocmd TextYankPost * :call system('clip.exe ',@")
-  augroup END
-endif
+let s:clip = '/mnt/c/Windows/System32/clip.exe' 
+if executable(s:clip)
+    augroup WSLYank
+        autocmd!
+        autocmd TextYankPost * call system('echo '.shellescape(join(v:event.regcontents, "\<CR>")).' | '.s:clip)
+    augroup END
+end
