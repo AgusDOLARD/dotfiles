@@ -30,7 +30,11 @@ let &t_SR.="\e[3 q" "SR = REPLACE mode
 let &t_EI.="\e[1 q" "EI = NORMAL mode]
 
 autocmd InsertEnter * norm zz
-" au BufNewFile,BufRead * nested
-"   \ if &buftype != "help" |
-"   \   tab sball |
-"   \ endif
+
+" Windows Yank
+if system('uname -r') =~ "Microsoft"
+  augroup Yank
+    autocmd!
+    autocmd TextYankPost * :call system('clip.exe ',@")
+  augroup END
+endif

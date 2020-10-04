@@ -3,7 +3,6 @@ imap jj <Esc>
 " imap jo <Esc>o
 
 nmap <C-m> `
-nmap <C-n><C-n> :GitGutterToggle<CR> :set rnu! <CR> :set number! <CR> :ALEToggle <CR>
 nmap <S-j> :tabprevious<CR>
 nmap <S-k> :tabnext<CR>
 nmap <S-u>	<C-r>
@@ -26,7 +25,6 @@ nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 nnoremap S :%s//g<Left><Left>
 nnoremap <Tab> %
 nnoremap Y y$
-nnoremap ) $
 
 vmap < <gv
 vmap > >gv
@@ -43,3 +41,8 @@ cnoremap <C-A>		<Home>
 cnoremap <C-E>		<End>
 cnoremap <C-K> <Up>
 cnoremap <C-J> <Down>
+
+map <C-A> ggVG
+map q: <nop>
+map Q <nop>
+noremap ) $
