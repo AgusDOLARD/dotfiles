@@ -1,5 +1,13 @@
 " Lightline
-let g:lightline = { 'colorscheme': 'gruvbox'}
+let g:lightline = { 
+	  \	'colorscheme': 'gruvbox',
+      \ 'component': {
+      \   'readonly': '%{&filetype=="help"?"":&readonly?"🔒":""}',
+      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
+      \   'fugitive': '%{exists("*FugitiveHead")?FugitiveHead():""}'
+      \ }
+	  \ }
+
 let g:lightline.component_expand = {
             \  'linter_checking': 'lightline#ale#checking',
             \  'linter_infos': 'lightline#ale#infos',

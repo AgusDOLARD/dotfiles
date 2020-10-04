@@ -19,6 +19,5 @@ let g:ale_fixers = {
             \   'haskell': ['brittany'],
             \ }
 let g:ale_fix_on_save = 1
-
-nmap <silent> ( <Plug>(ale_previous_wrap)
-nmap <silent> ) <Plug>(ale_next_wrap)
+nmap <silent> <leader>[ <Plug>(ale_previous_wrap)
+nmap <silent> <leader>] <Plug>(ale_next_wrap)
