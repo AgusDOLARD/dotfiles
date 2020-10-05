@@ -15,6 +15,7 @@ set termguicolors
 set undofile
 set undodir=$XDG_DATA_HOME/nvim/undodir
 set viminfo+='1000,n$XDG_DATA_HOME/nvim/viminfo'
+set clipboard=unnamed
 set pastetoggle=<F12>
 
 colorscheme gruvbox
@@ -27,6 +28,7 @@ let &t_SR.="\e[3 q" "SR = REPLACE mode
 let &t_EI.="\e[1 q" "EI = NORMAL mode]
 
 autocmd InsertEnter * norm zz
+autocmd InsertLeave * set nopaste
 
 let s:clip = '/mnt/c/Windows/System32/clip.exe' 
 if executable(s:clip)
