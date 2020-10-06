@@ -19,6 +19,7 @@ set clipboard=unnamed
 set pastetoggle=<F12>
 
 colorscheme gruvbox
+let g:gruvbox_contrast_dark = 'hard'
 
 let g:timeoutlen=100
 let g:termsize=10*0

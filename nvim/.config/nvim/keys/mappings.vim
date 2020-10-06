@@ -9,6 +9,7 @@ imap <C-j> <C-o>j
 imap <C-k> <C-o>k
 imap <C-l> <C-o>l
 
+map <leader>S :w !sudo tee % <CR><CR>
 map <C-A> ggVG
 map Q <nop>
 map q: <nop>

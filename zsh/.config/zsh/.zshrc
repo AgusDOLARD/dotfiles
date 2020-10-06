@@ -13,7 +13,7 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 # Theme
 prompt spaceship
-source /usr/local/share/zsh/site-functions/prompt_spaceship_setup
+# source /usr/local/share/zsh/site-functions/prompt_spaceship_setup
 
 SPACESHIP_CHAR_SYMBOL=🌵
 SPACESHIP_CHAR_SUFFIX=" "

@@ -1,0 +1,7 @@
+numlockx &
+clipmenud &
+.config/polybar/launch.sh &
+feh --bg-scale ~/Pictures/ --no-fehbg &
+setxkbmap -option caps:backspace &
+xset r 66 &
+exec bspwm

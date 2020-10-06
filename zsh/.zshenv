@@ -8,10 +8,11 @@ export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export MACHINE_STORAGE_PATH="$XDG_DATA_HOME/docker-machine"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 export NPM_CONFIG_USERCONFIG"=$XDG_CONFIG_HOME/npm/config"
+export NPM_CONFIG_PREFIX="$XDG_CONFIG_HOME/npm/global"
 export NUGET_PACKAGES="$XDG_CACHE_HOME/NuGetPackages"
 export PYLINTHOME="$XDG_CACHE_HOME/pylint"
 export WGETRC="$XDG_CONFIG_HOME/wgetrc"
-export XINITRC="$XDG_CONFIG_HOME/xinitrc"
+export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"
 
 # ZSH
 export HISTFILE="$XDG_CACHE_HOME/zsh/history"
@@ -25,6 +26,7 @@ export ZDOTDIR="$HOME/.config/zsh"
 # Apps
 export EDITOR="nvim"
 export READER="zathura"
+export TERMINAL="alacritty"
 
 export WINSDD="/mnt/c/Users/agust"
 export WINHDD="/mnt/d"
@@ -36,3 +38,6 @@ export NNN_COLORS="7634"
 export NNN_BMS="d:$WINHDD;c:$WINSDD"
 export NNN_OPTS="e"
 export NNN_PLUG='s:suedit;'
+# Clipmenu
+export CM_SELECTIONS="clipboard"
+export CM_MAX_CLIPS=20

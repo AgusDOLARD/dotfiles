@@ -3,6 +3,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'neovimhaskell/haskell-vim'
     " Plug 'posva/vim-vue'
     Plug 'SirVer/ultisnips'
+	Plug 'kovetskiy/sxhkd-vim'
     Plug 'airblade/vim-gitgutter'
     Plug 'airblade/vim-rooter'
     Plug 'ap/vim-css-color'

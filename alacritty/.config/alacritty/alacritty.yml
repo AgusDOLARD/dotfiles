@@ -55,27 +55,29 @@ mouse:
       args: []
 
 colors:
-    primary:
-      background: '#141414'
-      foreground: '0xd3d7cf'
-    normal:
-      black: '#4f4f4f'
-      red: '#ff6c60'
-      green: '#a8ff60'
-      yellow: '#ffffb6'
-      blue: '#96cbf3'
-      magenta: '#ff73fd'
-      cyan: '#c6c5fe'
-      white: '#f5f5f5'
-    bright:
-      black: '#4f4f4f'
-      red: '#ffb6b0'
-      green: '#ceffac'
-      yellow: '#ffffcc'
-      blue: '#b5dcff'
-      magenta: '#ff9cfe'
-      cyan: '#dfdffe'
-      white: '#f8f8f8'
+  primary:
+    background: '0x282828'
+    foreground: '0xdfbf8e'
+
+  normal:
+    black:   '0x665c54'
+    red:     '0xea6962'
+    green:   '0xa9b665'
+    yellow:  '0xe78a4e'
+    blue:    '0x7daea3'
+    magenta: '0xd3869b'
+    cyan:    '0x89b482'
+    white:   '0xdfbf8e'
+
+  bright:
+    black:   '0x928374'
+    red:     '0xea6962'
+    green:   '0xa9b665'
+    yellow:  '0xe3a84e'
+    blue:    '0x7daea3'
+    magenta: '0xd3869b'
+    cyan:    '0x89b482'
+    white:   '0xdfbf8e'
 
 # Mouse bindings
 #
@@ -237,7 +239,7 @@ key_bindings:
   # - { key: J,        mods: Control, action: ScrollLineDown }
   - { key: J,        mods: Control|Shift, action: ScrollPageDown }
   - { key: K,        mods: Control|Shift, action: ScrollPageUp }
-  - { key: G,        mods: Shift,   mode: ~Alt, action: ScrollToBottom }
+  # - { key: G,        mods: Shift,   mode: ~Alt, action: ScrollToBottom }
   - { key: Key0,     mods: Control,                 action: ResetFontSize    }
   - { key: Equals,   mods: Control,                 action: IncreaseFontSize }
   - { key: Add,      mods: Control,                 action: IncreaseFontSize }
