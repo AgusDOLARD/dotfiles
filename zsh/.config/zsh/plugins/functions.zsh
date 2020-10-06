@@ -14,4 +14,4 @@ gitpush() {
     git pull
     git push
 }
-cc() { du -a ~/.dots/* | awk '{print $2}' | fzf | xargs -r $EDITOR }
+cc() { du -a --exclude='autoload' ~/.dots/* | awk '{print $2}' | fzf | xargs -r $EDITOR }
