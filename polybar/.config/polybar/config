@@ -30,8 +30,8 @@ foreground = ${xrdb:foreground:#ffffff}
 [bar/bar]
 enable-ipc=true
 height = 30
-width = 23%
-offset-x = 76.5%
+width = 27%
+offset-x = 72%
 offset-y = 10
 ;radius = 15
 border-size = 0
@@ -53,7 +53,7 @@ font-3=Font Awesome 5 Brands:size=8;2
 
 ; Mpd
 modules-left = bspwm 
-modules-center = wlan alsa
+modules-center = wlan alsa battery
 modules-right = time 
 
 scroll-up = bspwn-wsnext
@@ -84,6 +84,36 @@ label = %title:0:40:...%
 label-color1 = ${colors.foreground} 
 label-background = ${colors.background} 
 label-padding = 2
+
+[module/battery]
+type = internal/battery
+full-at = 99
+battery = BAT0
+adapter = AC0
+time-format = %H:%M
+format-charging = <animation-charging> <label-charging>
+format-discharging = <ramp-capacity> <label-discharging>
+label-charging = %percentage%%
+label-discharging = %percentage%%
+label-full = Fully charged
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+bar-capacity-width = 10
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-framerate = 750
+animation-discharging-0 = 
+animation-discharging-1 = 
+animation-discharging-2 = 
+animation-discharging-3 = 
+animation-discharging-4 = 
+animation-discharging-framerate = 500
 
 [module/bspwm]
 type = internal/bspwm
@@ -165,7 +195,7 @@ ramp-signal-color1 = ${colors.foreground}
 
 [module/eth]
 type = internal/network
-interface = eno1
+interface = enp3s0f1
 interval = 3.0
 
 format-connected-prefix = " "
