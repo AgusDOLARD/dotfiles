@@ -1,7 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =5
-let g:netrw_dirhist_5='/home/agus/.config/scripts'
-let g:netrw_dirhist_4='/home/agus/.dots/sxhkd'
-let g:netrw_dirhist_3='/home/agus/.dots/polybar/.config/polybar'
-let g:netrw_dirhist_2='/home/agus/.dots/polybar/.config'
-let g:netrw_dirhist_1='/home/agus/.dots/polybar/.config/polybar'
