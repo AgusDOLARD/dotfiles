@@ -1,3 +1,5 @@
+alias -s pdf="zathura"
+
 alias sudo='sudo '
 alias awsdebian="ssh -i $HOME/.ssh/debian.pem admin@ec2-15-228-28-1.sa-east-1.compute.amazonaws.com"
 alias awsftp="lftp ftp://agus@15.228.28.1"

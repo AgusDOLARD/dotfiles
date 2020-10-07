@@ -1,7 +1,8 @@
 numlockx &
+dunst &
 clipmenud &
-.config/polybar/launch.sh &
-feh --bg-scale ~/Pictures/ --no-fehbg &
+picom --experimental-backends &
+feh --bg-scale ~/Pictures/wall.* --no-fehbg &
 setxkbmap -option caps:backspace &
 xset r 66 &
 exec bspwm

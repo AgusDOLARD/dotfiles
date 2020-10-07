@@ -1,6 +1,6 @@
 " Lightline
 let g:lightline = { 
-	  \	'colorscheme': 'gruvbox',
+	  \	'colorscheme': 'nord',
       \ 'component': {
       \   'readonly': '%{&filetype=="help"?"":&readonly?"🔒":""}',
       \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',

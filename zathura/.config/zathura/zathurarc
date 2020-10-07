@@ -9,7 +9,7 @@ set default-bg "#141414"
 
 
 # settings
-set selection-clipboard clipboard
+# set selection-clipboard clipboard
 set show-scrollbars True
 # key bindings
 
@@ -45,4 +45,3 @@ map [fullscreen] d toggle_page_mode 2
 map [fullscreen] <Tab> toggle_index
 
 map [index] q quit
-

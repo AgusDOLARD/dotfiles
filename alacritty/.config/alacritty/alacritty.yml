@@ -32,7 +32,7 @@ font:
     y: 0
 
 
-background_opacity: 0.5 
+background_opacity: 0.9 
 
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"

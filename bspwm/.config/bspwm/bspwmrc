@@ -1,8 +1,14 @@
 #! /bin/sh
 
 pgrep -x sxhkd > /dev/null || sxhkd &
+xrdb ~/.config/X11/.Xresources 
+~/.config/polybar/launch.sh &
+pgrep bspswallow || bspswallow &
 
-bspc monitor -d   
+bspc monitor -d    
+
+bspc config initial_polarity first_child
+bspc config automatic_scheme spiral
 
 bspc config top_padding 40
 bspc config bottom_padding 20
@@ -28,4 +34,5 @@ bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
 bspc rule -a firefox desktop='^1'
+bspc rule -a Zathura state=tiled
 bspc config -d ^1 window_gap 50
