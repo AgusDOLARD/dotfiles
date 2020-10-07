@@ -14,4 +14,4 @@ gitpush() {
     git pull
     git push
 }
-cc() { du -a --exclude='autoload' ~/.dots/* | awk '{print $2}' | fzf | xargs -r $EDITOR }
+cc() { find ~/.dots -type d \( -name autoload -o -name .git \) -prune -o -type f -print | fzf | xargs -r $EDITOR }

@@ -1,2 +1,2 @@
-nvim/.config/nvim/autoload/*
-nvim/.config/nvim/.netrwhist
+/nvim/.config/nvim/autoload/
+/nvim/.config/nvim/.netrwhist
