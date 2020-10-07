@@ -17,6 +17,7 @@ export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"
 # ZSH
 export HISTFILE="$XDG_CACHE_HOME/zsh/history"
 export SAVEHIST=10000
+export HISTSIZE=10000
 export ZSHPLUGS="$XDG_CONFIG_HOME/zsh/plugins"
 export _Z_DATA="$XDG_CACHE_HOME/z"
 export LS_COLORS="no=00;37:fi=00:di=00;33:ln=04;36:pi=40;33:so=01;35:bd=40;33;01:"

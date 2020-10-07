@@ -3,7 +3,6 @@
 pgrep -x sxhkd > /dev/null || sxhkd &
 xrdb ~/.config/X11/.Xresources 
 ~/.config/polybar/launch.sh &
-pgrep bspswallow || bspswallow &
 
 bspc monitor -d    
 

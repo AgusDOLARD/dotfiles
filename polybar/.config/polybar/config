@@ -53,7 +53,7 @@ font-3=Font Awesome 5 Brands:size=8;2
 
 ; Mpd
 modules-left = bspwm 
-modules-center = wlan alsa battery
+modules-center = wlan pulseaudio battery
 modules-right = time 
 
 scroll-up = bspwn-wsnext
@@ -222,8 +222,8 @@ label-background = ${colors.background}
 ;label-padding = 2
 
 
-[module/alsa]
-type = internal/alsa
+[module/pulseaudio]
+type = internal/pulseaudio
 
 ;format-margin = 1
 format-volume = <ramp-volume> <label-volume>
@@ -242,6 +242,7 @@ ramp-volume-2 = ""
 label-muted = " muted"   
 label-muted-background = ${colors.background}
 label-muted-foreground = ${colors.foreground}
+; click-right = exec alacritty -e pulsemixer &
 
 ;Spotify modules
 

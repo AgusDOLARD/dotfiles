@@ -8,7 +8,6 @@ alias byeOrphans='sudo pacman -Rns $(pacman -Qtdq)'
 alias compose='docker-compose'
 alias cya="rm -rf"
 alias dps="docker ps --format 'table {{.ID}}\t{{.Image}}\t{{.Names}}\t{{.Size}}\t{{.Status}}'"
-alias dmenu_run="dmenu_run -c -l 15 -h 30 -F -fn 'Fira Code 12'"
 alias gch="git checkout"
 alias gss="git status"
 alias l="ls -al"

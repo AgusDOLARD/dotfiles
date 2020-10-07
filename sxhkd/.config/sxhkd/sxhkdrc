@@ -6,10 +6,10 @@ XF86MonBrightness{Down,Up}
 	$SCRIPT_DIR/bright { -,+ }
 
 XF86Audio{Lower,Raise}Volume
-	amixer set Master 5{-,+}
+	pactl set-sink-volume @DEFAULT_SINK@ {-,+}5%
 
 {_,shift + }XF86AudioMute
-	{amixer set Master toggle, alacritty -e alsamixer }
+	{pactl set-sink-mute @DEFAULT_SINK@ toggle, alacritty -e pulsemixer }
 
 XF86TouchpadToggle
 	$SCRIPT_DIR/touchpad

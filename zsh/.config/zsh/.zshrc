@@ -6,6 +6,8 @@ autoload -U promptinit; promptinit
 _comp_options+=(globdots)
 
 setopt autocd
+setopt INC_APPEND_HISTORY
+setopt HIST_IGNORE_DUPS
 
 zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
