@@ -17,9 +17,6 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 prompt spaceship
 # source /usr/local/share/zsh/site-functions/prompt_spaceship_setup
 
-SPACESHIP_CHAR_SYMBOL=🌵
-SPACESHIP_CHAR_SUFFIX=" "
-
 # Source plugins
 for f in $ZSHPLUGS/*; do source "$f"; done
 for j in /usr/share/zsh/plugins/zsh-*/*.plugin.zsh; do source "$j"; done

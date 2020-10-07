@@ -259,6 +259,7 @@ key_bindings:
   # - { key: Return,   mods: Control|Shift, action: SpawnNewInstance }
   - { key: V,        mods: Alt, action: Paste}
   - { key: C,        mods: Alt, action: Copy}
+  - { key: V,        mods: Shift|Alt, action: PasteSelection   }
   # - { key: K,        mods: Control, action: ScrollLineUp}
   # - { key: J,        mods: Control, action: ScrollLineDown }
   - { key: J,        mods: Control|Shift, action: ScrollPageDown }

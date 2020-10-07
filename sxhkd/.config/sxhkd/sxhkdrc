@@ -9,23 +9,26 @@ XF86Audio{Lower,Raise}Volume
 	pactl set-sink-volume @DEFAULT_SINK@ {-,+}5%
 
 {_,shift + }XF86AudioMute
-	{pactl set-sink-mute @DEFAULT_SINK@ toggle, alacritty -e pulsemixer }
+	{pactl set-sink-mute @DEFAULT_SINK@ toggle, $TERMINAL -e pulsemixer }
 
 XF86TouchpadToggle
 	$SCRIPT_DIR/touchpad
 
+Print
+	$SCRIPT_DIR/dmenuscrot
+
 # terminal emulator
 super + Return
-	alacritty
+	$TERMINAL
 
 super + n
-	alacritty -e nmtui
+	$TERMINAL -e nnn
 
 # program launcher
 super + d
 	dmenu_run
 
-super + control + l
+alt + control + l
 	bslock
 
 super + b
@@ -42,7 +45,7 @@ super + Escape
 	$SCRIPT_DIR/killandnotify "sxhkd" "Config reloaded" && sxhkd &
 
 # quit/restart bspwm
-super + alt + {q,r}
+super + shift + {q,r}
 	bspc {quit,wm -r}
 
 # close and kill
