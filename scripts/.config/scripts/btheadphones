@@ -1,0 +1,15 @@
+#!/bin/bash
+
+DMENU=${DMENU:-dmenu}
+
+prompt="Bluetooth Headset"
+cmd_list="connect disconnect"
+
+cmd="$(echo $cmd_list | sed 's/ /\n/g' | ${DMENU} -p "$prompt")"
+[[ -z $cmd ]] && exit 1
+
+if [[ $cmd = connect ]]; then
+	echo -e 'power on\nconnect \t \nquit' | bluetoothctl
+else
+	echo -e 'power on\ndisconnect \t \nquit' | bluetoothctl
+fi

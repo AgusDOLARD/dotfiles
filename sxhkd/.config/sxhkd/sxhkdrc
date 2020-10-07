@@ -25,6 +25,12 @@ super + n
 super + d
 	dmenu_run
 
+super + control + l
+	bslock
+
+super + b
+	$SCRIPT_DIR/btheadphones
+
 super + c
 	clipmenu
 
@@ -33,11 +39,7 @@ super + shift + p
 
 # make sxhkd reload its configuration files:
 super + Escape
-	killandnotify "sxhkd" "Config reloaded" && sxhkd &
-
-#
-# bspwm hotkeys
-#
+	$SCRIPT_DIR/killandnotify "sxhkd" "Config reloaded" && sxhkd &
 
 # quit/restart bspwm
 super + alt + {q,r}
