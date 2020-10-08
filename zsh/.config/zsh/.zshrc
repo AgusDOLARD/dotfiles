@@ -15,7 +15,6 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 # Theme
 prompt spaceship
-# source /usr/local/share/zsh/site-functions/prompt_spaceship_setup
 
 # Source plugins
 for f in $ZSHPLUGS/*; do source "$f"; done
@@ -31,6 +30,7 @@ bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
 bindkey -M viins jj vi-cmd-mode 
+bindkey "^[[3~" delete-char
 
 # ci"
 autoload -U select-quoted

@@ -26,19 +26,29 @@ export ZDOTDIR="$HOME/.config/zsh"
 
 # Apps
 export EDITOR="nvim"
+export VISUAL="nvim"
 export READER="zathura"
 export TERMINAL="alacritty"
+export BROWSER="firefox"
+export IMAGE="feh"
+export WM="bspwm"
+export PAGER="less"
 
 export WINSDD="/mnt/c/Users/agust"
 export WINHDD="/mnt/d"
 export DISPLAY=:0
 export SCRIPT_DIR="$XDG_CONFIG_HOME/scripts"
+
 # NNN env
 export NNN_FIFO="/tmp/nnn.fifo"
 export NNN_COLORS="7634"
 export NNN_BMS="d:$WINHDD;c:$WINSDD"
 export NNN_OPTS="e"
 export NNN_PLUG='s:suedit;'
+
 # Clipmenu
-export CM_SELECTIONS="clipboard"
+export CM_SELECTIONS="primary clipboard"
 export CM_MAX_CLIPS=20
+
+path=("$SCRIPT_DIR" "$HOME/.local/bin" "$path[@]]")
+export PATH

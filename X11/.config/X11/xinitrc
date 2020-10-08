@@ -5,4 +5,5 @@ picom --experimental-backends &
 feh --bg-scale ~/Pictures/wall.* --no-fehbg &
 setxkbmap -option caps:backspace &
 xset r 66 &
+pgrep -x sxhkd > /dev/null || sxhkd &
 exec bspwm

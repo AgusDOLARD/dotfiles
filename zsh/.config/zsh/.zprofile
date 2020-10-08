@@ -1,14 +1,5 @@
-if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
-  exec startx "$XINITRC"
-fi
-
-if [ -d "$HOME/.config/scripts" ]; then
-	 PATH="$HOME/.config/scripts:$PATH"
-fi
-
-if [ -d "$HOME/.local/bin" ]; then
-	 PATH="$HOME/.local/bin:$PATH"
-	 PATH="$HOME/.local/share/npm/bin/:$PATH"
+if [[ "$(tty)" = "/dev/tty1" ]]; then
+  exec startx "$XDG_CONFIG_HOME/X11/xinitrc"
 fi
 
 [[ -f ~/.zshenv ]] && . ~/.zshenv

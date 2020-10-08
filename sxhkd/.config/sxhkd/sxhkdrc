@@ -40,9 +40,18 @@ super + c
 super + shift + p
   	$SCRIPT_DIR/toggleprogram "picom" "--experimental-backends"
 
+super + alt + shift + p
+  	clipctl disable && $SCRIPT_DIR/lastpass-dmenu copy && clipctl enable
+
 # make sxhkd reload its configuration files:
 super + Escape
 	$SCRIPT_DIR/killandnotify "sxhkd" "Config reloaded" && sxhkd &
+
+
+
+########################################################################
+#								BSPWM								   #
+########################################################################
 
 # quit/restart bspwm
 super + shift + {q,r}
@@ -51,25 +60,14 @@ super + shift + {q,r}
 # close and kill
 super + {_,shift + }q
 	bspc node -{c,k}
-#
-# state/flags
-#
 
 # set the window state
 super + f
 	bspc node focused.tiled -t fullscreen || bspc node focused.fullscreen -t tiled
 
-#
-# focus/swap
-#
-
 # focus the node in the given direction
 super + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
-
-# focus the next/previous desktop in the current monitor
-super + bracket{left,right}
-	bspc desktop -f {prev,next}.local
 
 # focus the last node/desktop
 super + {grave,Tab}
