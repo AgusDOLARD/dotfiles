@@ -1,0 +1,24 @@
+#!/bin/sh
+
+#notify-send -t 4000 "Scanning Access Points."
+readarray -t list <<< $(nmcli -g SSID d wifi list --rescan no)
+select=$(printf '%s\n' "${list[@]}" | dmenu "$@")
+if [ "$select" ]; then
+	readarray -t uuid <<< $(nmcli -e no -g UUID c)
+	found=-1
+	for i in "${!uuid[@]}"; do
+		ssid=$(nmcli -g 802-11-wireless.ssid c show uuid ${uuid[$i]})
+		if [ "$ssid" = "$select" ]; then
+			found=$i
+			break
+		fi
+	done
+	if [ "$found" = -1 ]; then
+		password=$(printf "" | dmenu -p Password "$@")
+		if [ "$password" ]; then
+			ret=$(nmcli d wifi connect "$select" password $password)
+		fi
+	else
+		ret=$(nmcli c up uuid ${uuid[$found]})
+	fi
+fi

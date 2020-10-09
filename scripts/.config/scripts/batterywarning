@@ -1,0 +1,13 @@
+#!/bin/bash
+
+battery_level=`cat /sys/class/power_supply/BAT0/capacity`
+
+if [ "$battery_level" -le 15 ]
+then
+  notify-send -u critical "Battery low. Battery level is ${battery_level}%!" && light -S 20
+elif [ "$battery_level" -le 3 ]
+then
+  notify-send -u critical "Battery critical. Battery level is ${battery_level}%! Suspending..."
+  sleep 5
+  systemctl suspend
+fi
