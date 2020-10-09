@@ -36,8 +36,8 @@ super + c
 	clipmenu
 
 # Some scripts
-super + shift + o ; {p,w,b}
-  	{$SCRIPT_DIR/toggleprogram "picom" "--experimental-backends",$SCRIPT_DIR/dmenuwifi,$SCRIPT_DIR/btheadphones}
+super + shift + o ; {p,w,b,d}
+  	{$SCRIPT_DIR/toggleprogram "picom" "--experimental-backends",$SCRIPT_DIR/dmenuwifi,$SCRIPT_DIR/btheadphones,$SCRIPT_DIR/toggleprogram "dunst"}
 
 # Lastpass
 super + alt + shift + p
