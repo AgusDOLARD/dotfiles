@@ -13,6 +13,7 @@ export NUGET_PACKAGES="$XDG_CACHE_HOME/NuGetPackages"
 export PYLINTHOME="$XDG_CACHE_HOME/pylint"
 export WGETRC="$XDG_CONFIG_HOME/wgetrc"
 export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"
+export STACK_ROOT="$XDG_DATA_HOME/stack"
 
 # ZSH
 export HISTFILE="$XDG_CACHE_HOME/zsh/history"
@@ -44,11 +45,11 @@ export NNN_FIFO="/tmp/nnn.fifo"
 export NNN_COLORS="7634"
 export NNN_BMS="d:$WINHDD;c:$WINSDD"
 export NNN_OPTS="e"
-export NNN_PLUG='s:suedit;'
+export NNN_PLUG='s:suedit;d:_dragon-drag-and-drop -a -x $nnn*'
 
 # Clipmenu
 export CM_SELECTIONS="primary clipboard"
 export CM_MAX_CLIPS=20
 
-path=("$SCRIPT_DIR" "$HOME/.local/bin" "$path[@]]")
+path=("$SCRIPT_DIR" "$HOME/.local/bin" "$XDG_DATA_HOME" "$path[@]]")
 export PATH

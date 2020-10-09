@@ -1,49 +1,49 @@
-#
-# wm independent hotkeys
-#
+########################################################################
+#								KEYBINDS							   #
+########################################################################
 
+# Brightness
 XF86MonBrightness{Down,Up}
-	$SCRIPT_DIR/bright { -,+ }
+	light {-U,-A} 10
 
+# Volume
 XF86Audio{Lower,Raise}Volume
 	pactl set-sink-volume @DEFAULT_SINK@ {-,+}5%
 
+# Mute
 {_,shift + }XF86AudioMute
 	{pactl set-sink-mute @DEFAULT_SINK@ toggle, $TERMINAL -e pulsemixer }
 
+# Disable touchpad
 XF86TouchpadToggle
 	$SCRIPT_DIR/touchpad
 
+# Screenshot
 Print
 	$SCRIPT_DIR/dmenuscrot
 
-# terminal emulator
 super + Return
 	$TERMINAL
 
-super + n
-	$TERMINAL -e nnn
-
-# program launcher
 super + d
 	dmenu_run
 
+# Lockscreen
 alt + control + l
 	bslock
-
-super + b
-	$SCRIPT_DIR/btheadphones
 
 super + c
 	clipmenu
 
-super + shift + p
-  	$SCRIPT_DIR/toggleprogram "picom" "--experimental-backends"
+# Some scripts
+super + shift + o ; {p,w,b}
+  	{$SCRIPT_DIR/toggleprogram "picom" "--experimental-backends",$SCRIPT_DIR/dmenuwifi,$SCRIPT_DIR/btheadphones}
 
+# Lastpass
 super + alt + shift + p
   	clipctl disable && $SCRIPT_DIR/lastpass-dmenu copy && clipctl enable
 
-# make sxhkd reload its configuration files:
+# Reload SXHKD
 super + Escape
 	$SCRIPT_DIR/killandnotify "sxhkd" "Config reloaded" && sxhkd &
 
