@@ -1,3 +1,4 @@
+xrdb ~/.config/X11/.Xresources 
 numlockx &
 dunst &
 clipmenud &
@@ -6,4 +7,5 @@ feh --bg-scale ~/Pictures/wall.* --no-fehbg &
 setxkbmap -option caps:backspace &
 xset r 66 &
 pgrep -x sxhkd > /dev/null || sxhkd &
-exec bspwm
+dwmblocks &
+exec dwm

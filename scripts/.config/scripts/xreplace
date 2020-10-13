@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Target file
+target_file="$1"
+
+cp $target_file.in $target_file.tmp
+
+# Grab colors from Xresources
+xrdb ~/.config/X11/.Xresources
+
+# Numbered colors
+for i in {0..15}
+do
+    v=`xrdb -query | awk '/*.color'"$i":'/ { print substr($2,2) }'`
+    #echo $v
+    eval "sed -i 's/%cl${i}%/\x27#${v}\x27/g' $target_file.tmp";
+done
+
+# Named colors
+foreground=`xrdb -query | awk '/*.foreground/ { print substr($2,2) }'`
+background=`xrdb -query | awk '/*.background/ { print substr($2,2) }'`
+sed -i "s/%clfg%/\x27#${foreground}\x27/g" $target_file.tmp
+sed -i "s/%clbg%/\x27#${background}\x27/g" $target_file.tmp
+
+# Finally, replace target file with our updated one
+rm $target_file
+mv $target_file.tmp $target_file

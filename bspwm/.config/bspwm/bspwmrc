@@ -12,7 +12,6 @@ bspc config top_padding 40
 bspc config bottom_padding 20
 bspc config left_padding 20
 bspc config right_padding 20
-bspc config border_width 2
 bspc config window_gap 15
 bspc config border_width 3
 

@@ -1,0 +1,17 @@
+#!/bin/sh
+
+case $BLOCK_BUTTON in
+	1) $TERMINAL -e nmtui ;;
+	3) pgrep -x dunst >/dev/null && notify-send "🌐 Internet module" "\- Click to connect
+📡: no wifi connection
+📶: wifi connection with quality
+❎: no ethernet
+🌐: ethernet working
+" ;;
+esac
+
+[ "$(cat /sys/class/net/w*/operstate)" = 'down' ] && wifiicon="📡"
+
+[ ! -n "${wifiicon+var}" ] && wifiicon=$(nmcli -t -f name,device connection show --active | awk -F ':' '/wlp2s0/ {print "📶 " $1}')
+
+printf "%s \n" "$wifiicon"

@@ -14,6 +14,7 @@ export PYLINTHOME="$XDG_CACHE_HOME/pylint"
 export WGETRC="$XDG_CONFIG_HOME/wgetrc"
 export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"
 export STACK_ROOT="$XDG_DATA_HOME/stack"
+export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
 
 # ZSH
 export HISTFILE="$XDG_CACHE_HOME/zsh/history"
@@ -26,6 +27,7 @@ export ZDOTDIR="$HOME/.config/zsh"
 # export ZSH="$XDG_CONFIG_HOME/oh-my-zsh"
 
 # Apps
+export EDITOR="nvim"
 export EDITOR="nvim"
 export VISUAL="nvim"
 export READER="zathura"
@@ -51,5 +53,5 @@ export NNN_PLUG='s:suedit;d:_dragon-drag-and-drop -a -x $nnn*'
 export CM_SELECTIONS="primary clipboard"
 export CM_MAX_CLIPS=20
 
-path=("$SCRIPT_DIR" "$HOME/.local/bin" "$XDG_DATA_HOME" "$path[@]]")
+path=("$SCRIPT_DIR/barModules" "$SCRIPT_DIR" "$HOME/.local/bin" "$XDG_DATA_HOME" "$path[@]]")
 export PATH

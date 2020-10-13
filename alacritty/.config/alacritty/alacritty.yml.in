@@ -58,8 +58,8 @@ mouse:
 colors:
   # Default colors
   primary:
-    background: '#2E3440'
-    foreground: '#D8DEE9'
+    background: %clbg%
+    foreground: %clfg%
 
   # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
@@ -68,25 +68,25 @@ colors:
 
   # Normal colors
   normal:
-    black:   '#3B4252'
-    red:     '#BF616A'
-    green:   '#A3BE8C'
-    yellow:  '#EBCB8B'
-    blue:    '#81A1C1'
-    magenta: '#B48EAD'
-    cyan:    '#88C0D0'
-    white:   '#E5E9F0'
+    black:   %cl0%
+    red:     %cl1%
+    green:   %cl2%
+    yellow:  %cl3%
+    blue:    %cl4%
+    magenta: %cl5%
+    cyan:    %cl6%
+    white:   %cl7%
 
   # Bright colors
   bright:
-    black:   '#4C566A'
-    red:     '#BF616A'
-    green:   '#A3BE8C'
-    yellow:  '#EBCB8B'
-    blue:    '#81A1C1'
-    magenta: '#B48EAD'
-    cyan:    '#8FBCBB'
-    white:   '#ECEFF4'
+    black:   %cl8%
+    red:     %cl9%
+    green:   %cl10%
+    yellow:  %cl11%
+    blue:    %cl12%
+    magenta: %cl13%
+    cyan:    %cl14%
+    white:   %cl15%
 
 # Mouse bindings
 #

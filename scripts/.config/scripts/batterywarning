@@ -3,12 +3,13 @@
 battery_level=`cat /sys/class/power_supply/BAT0/capacity`
 battery_status=`cat /sys/class/power_supply/BAT0/status`
 
-if [ "$battery_level" -le 15 ] && [ "$battery_status" == "Discharging" ]
+if [ "$battery_level" -le 25 ] && [ "$battery_status" == "Discharging" ]
 then
   notify-send -u critical "Battery low. Battery level is ${battery_level}%!" && light -S 20
-elif [ "$battery_level" -le 3 ]
+elif [ "$battery_level" -le 10 ] && [ "$battery_status" == "Discharging" ]
 then
-  notify-send -u critical "Battery critical. Battery level is ${battery_level}%! Suspending..."
+  notify-send -u critical "Battery critical" "Battery level is ${battery_level}%! Suspending..."
   sleep 5
-  systemctl suspend
+  systemctl suspend 
+  bslock
 fi

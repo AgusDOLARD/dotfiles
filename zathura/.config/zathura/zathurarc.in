@@ -2,9 +2,9 @@
 
 #Colors
 set recolor true
-set recolor-darkcolor '#D8DEE9'
-set recolor-lightcolor '#2E3440'
-set default-bg '#2E3440'
+set recolor-darkcolor %clfg%
+set recolor-lightcolor %clbg%
+set default-bg %clbg%
 #set font "monospace normal 16"
 
 
