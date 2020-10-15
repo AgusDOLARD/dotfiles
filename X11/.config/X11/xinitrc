@@ -1,4 +1,5 @@
-xrdb ~/.config/X11/.Xresources 
+replace ~/.config/alacritty/alacritty.yml &
+replace ~/.config/zathra/zathurarc &
 numlockx &
 dunst &
 clipmenud &
@@ -8,4 +9,4 @@ setxkbmap -option caps:backspace &
 xset r 66 &
 pgrep -x sxhkd > /dev/null || sxhkd &
 dwmblocks &
-exec dwm
+exec bspwm
