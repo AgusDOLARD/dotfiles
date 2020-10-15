@@ -1,0 +1,3 @@
+xreplace ~/.config/alacritty/alacritty.yml
+xreplace ~/.config/bspwm/bspwmrc
+xreplace ~/.config/zathura/zathurarc
