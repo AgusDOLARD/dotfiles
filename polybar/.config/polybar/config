@@ -109,6 +109,7 @@ label-empty =
 type = internal/backlight
 card = intel_backlight
 format-foreground = ${colors.color6}
+label-padding=1
 format = <label>
 label =  %percentage%%
 
@@ -155,7 +156,7 @@ label = %percentage_used%%
 type = internal/network
 interface = wlp2s0
 interval = 3.0
-format-connected-margin = 2
+format-connected-margin = 1
 format-connected-foreground = ${colors.color4}
 
 
@@ -163,7 +164,7 @@ format-connected =  <label-connected>
 label-connected = %essid%
 
 format-disconnected = <label-disconnected>
-format-disconnected-margin = 2
+format-disconnected-margin = 1
 format-disconnected-foreground = ${colors.color5}
 label-disconnected = %ifname% disconnected
 
@@ -198,6 +199,7 @@ label-padding = 2
 type = internal/pulseaudio
 
 format-volume-margin = 2
+label-padding=1
 format-volume-foreground = ${colors.color6}
 format-volume = <ramp-volume> <label-volume>
 label-volume = %percentage%%

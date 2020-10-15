@@ -1,3 +1,4 @@
+replace ~/.config/bspwm/bspwm &
 replace ~/.config/alacritty/alacritty.yml &
 replace ~/.config/zathra/zathurarc &
 numlockx &
