@@ -114,13 +114,14 @@ if ! lpass status; then
   echo 'Lastpass-cli returning failed status.' <&2
   # shellcheck disable=SC2016
   echo 'Please run `lpass login [your_username]`' >&2
+  lpass login agusdolard@gmail.com
   exit 1
 fi
 
 # Get selection from user via dmenu
 selid=$(
   printf '%s\n' "${entries[@]}" |
-  dmenu -i -p 'LastPass: ' -l 7 |
+  dmenu -i -l 7 |
   sed 's/^.*\[id: \([0-9]\{1,\}\)\].*$/\1/'
   )
 if [ -z "${selid}" ]; then
