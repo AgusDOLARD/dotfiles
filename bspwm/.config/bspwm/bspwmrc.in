@@ -3,7 +3,7 @@
 xrdb ~/.config/X11/.Xresources 
 ~/.config/polybar/launch.sh &
 
-bspc monitor -d    
+bspc monitor -d 1 2 3 4 5 6 7 8 9
 
 bspc config initial_polarity first_child
 bspc config automatic_scheme spiral
