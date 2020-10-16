@@ -28,8 +28,8 @@ super + Return
 super + d
 	dmenu_run
 
-super + control + shift + {l,p,g}
-	{systemctl suspend && bslock,clipctl disable && $SCRIPT_DIR/lastpass-dmenu copy && clipctl enable,$SCRIPT_DIR/lastpass-dmenu-generate}
+super + control + shift + {l,p}
+	{systemctl suspend && bslock,clipctl disable && $SCRIPT_DIR/lastpass-dmenu copy && clipctl enable}
 
 super + c
 	clipmenu
