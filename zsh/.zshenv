@@ -27,9 +27,16 @@ export ZDOTDIR="$HOME/.config/zsh"
 # export ZSH="$XDG_CONFIG_HOME/oh-my-zsh"
 
 # Apps
-export EDITOR="nvim"
-export EDITOR="nvim"
-export VISUAL="nvim"
+if [ -x "$(command -v nvim)" ]; ; then
+	export EDITOR="nvim"
+	export EDITOR="nvim"
+	export VISUAL="nvim"
+	alias vim="nvim"
+else
+	export EDITOR="vim"
+	export EDITOR="vim"
+	export VISUAL="vim"
+fi
 export READER="zathura"
 export TERMINAL="alacritty"
 export BROWSER="firefox"
