@@ -1,5 +1,0 @@
-#! /bin/sh
-
-brightness="$(light -G)"
-brightness="$( printf "%.0f" $brightness )"
-echo "$brightness"%

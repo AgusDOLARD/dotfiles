@@ -64,7 +64,7 @@ modules-left =  bspwm
 ;modules-center = previous playpause next spotify
 ; Mpd
 modules-center = time 
-modules-right = backlight pulseaudio wlan battery
+modules-right = temperature backlight pulseaudio wlan battery
 
 scroll-up = bspwn-wsnext
 scroll-down = bspwn-wsprev
@@ -220,16 +220,17 @@ type = internal/temperature
 thermal-zone = 0
 warn-temperature = 60
 
-format =  <label>
-format-warn = <ramp> <label-warn>
-
 label = %temperature-c%
 label-warn = %temperature-c%
-label-warn-color1 = ${colors.secondary}
+label-warn-color1 = ${colors.color1}
+
+format = <ramp> <label>
+format-warn = <ramp> <label-warn>
+format-padding = 2
+format-foreground = ${colors.color6}
 
 ramp-0 = 
 ramp-1 = 
-ramp-2 = 
 
 [module/powermenu]
 type = custom/menu

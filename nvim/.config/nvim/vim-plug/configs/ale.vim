@@ -6,6 +6,7 @@ let g:ale_linters = {
             \   'json': ['jsonlint'],
             \   'python': ['flake8'],
             \   'haskell': ['hlint'],
+            \   'c': ['clangtidy'],
             \   'vim': ['vint'] 
             \ }
 let g:ale_fixers = {
@@ -14,6 +15,7 @@ let g:ale_fixers = {
             \   'vue': ['prettier'],
             \   'json': ['prettier'],
             \   'css': ['prettier'],
+            \   'c': ['clangtidy'],
             \   '*': ['remove_trailing_lines'],
             \   'python': ['black'],
             \   'haskell': ['brittany'],

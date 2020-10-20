@@ -16,6 +16,7 @@ alias n="nnn"
 alias p='sudo pacman'
 alias prettier="cp $HOME/.dots/extraConf/.prettierrc . && npm i prettier -D"
 alias svim="sudo -E nvim"
+alias vim="$EDITOR"
 alias wget='wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"'
 alias yolo="gitpush $(curl -s http://whatthecommit.com/index.txt)"
 alias yt="youtube-dl -f mp4 -o '$WINHDD/Videos/%(title)s-%(uploader)s.%(ext)s' -ic" 
