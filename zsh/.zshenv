@@ -60,5 +60,5 @@ export NNN_PLUG='s:suedit;d:_dragon-drag-and-drop -a -x $nnn*'
 export CM_SELECTIONS="primary clipboard"
 export CM_MAX_CLIPS=20
 
-path=("$SCRIPT_DIR/barModules" "$SCRIPT_DIR" "$HOME/.local/bin" "$XDG_DATA_HOME" "$path[@]]")
+path=("$SCRIPT_DIR" "$HOME/.local/bin" "$XDG_DATA_HOME" "$path[@]]")
 export PATH

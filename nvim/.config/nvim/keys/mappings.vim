@@ -1,5 +1,5 @@
-cnoremap <C-A>		<Home>
-cnoremap <C-E>		<End>
+cnoremap <C-A> <Home>
+cnoremap <C-E> <End>
 cnoremap <C-J> <Down>
 cnoremap <C-K> <Up>
 
@@ -10,7 +10,6 @@ imap <C-k> <C-o>k
 imap <C-l> <C-o>l
 
 map <leader>S :w !sudo tee % <CR><CR>
-map <C-A> ggVG
 map Q <nop>
 map q: <nop>
 
