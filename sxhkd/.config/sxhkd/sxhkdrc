@@ -34,6 +34,9 @@ super + control + shift + {l,p}
 super + c
 	clipmenu
 
+control + shift + Escape
+	$SCRIPT_DIR/shutdown-script
+
 # Some scripts
 super + shift + o ; {p,w,b,d,t}
   	{$SCRIPT_DIR/toggleprogram "picom" "--experimental-backends",$SCRIPT_DIR/dmenuwifi,$SCRIPT_DIR/btheadphones,$SCRIPT_DIR/toggleprogram "dunst",$SCRIPT_DIR/todo}

@@ -1,6 +1,7 @@
 alias -s pdf="zathura"
 
-alias sudo='sudo '
+alias -g L='| less'
+
 alias awsdebian="ssh -i $HOME/.ssh/debian.pem admin@ec2-15-228-28-1.sa-east-1.compute.amazonaws.com"
 alias awsftp="lftp ftp://agus@15.228.28.1"
 alias byeImages="docker rmi $(docker images -q) --force"
@@ -8,16 +9,14 @@ alias byeOrphans='sudo pacman -Rns $(pacman -Qtdq)'
 alias compose='docker-compose'
 alias cya="rm -rf"
 alias dps="docker ps --format 'table {{.ID}}\t{{.Image}}\t{{.Names}}\t{{.Size}}\t{{.Status}}'"
-alias gch="git checkout"
+alias exe='chmod +x'
 alias gss="git status"
 alias l="ls -alh"
 alias ls='ls --color=always'
 alias n="nnn"
 alias p='sudo pacman'
-alias prettier="cp $HOME/.dots/extraConf/.prettierrc . && npm i prettier -D"
+alias sudo='sudo '
 alias svim="sudo -E nvim"
 alias vim="$EDITOR"
 alias wget='wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"'
 alias yolo="gitpush $(curl -s http://whatthecommit.com/index.txt)"
-alias yt="youtube-dl -f mp4 -o '$WINHDD/Videos/%(title)s-%(uploader)s.%(ext)s' -ic" 
-alias ytm="youtube-dl --add-metadata --audio-quality 0 --audio-format mp3 --extract-audio -o '$WINHDD/Musica/%(title)s|%(uploader)s.%(ext)s' -ic"

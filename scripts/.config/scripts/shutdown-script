@@ -1,0 +1,14 @@
+#!/bin/bash
+
+DMENU=${DMENU:-dmenu}
+
+prompt="Shutdown?"
+cmd_list="Yes No"
+
+ans="$(echo $cmd_list | sed 's/ /\n/g' | ${DMENU} -p "$prompt")"
+[[ -z $ans ]] && exit 1
+
+if [[ $ans = Yes ]]; then
+	printf $ans
+	shutdown now
+fi
