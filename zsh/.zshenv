@@ -43,6 +43,7 @@ export BROWSER="firefox"
 export IMAGE="feh"
 export WM="bspwm"
 export PAGER="less"
+export TERM="vt100"
 
 export WINSDD="/mnt/c/Users/agust"
 export WINHDD="/mnt/d"
