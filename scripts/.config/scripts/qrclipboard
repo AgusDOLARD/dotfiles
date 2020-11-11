@@ -1,0 +1,8 @@
+#!/bin/bash
+
+IMAGE_PATH='/tmp/qrcode.png'
+
+DATA="$(xsel -b -o)"
+
+qrencode -o $IMAGE_PATH $DATA
+feh $IMAGE_PATH
