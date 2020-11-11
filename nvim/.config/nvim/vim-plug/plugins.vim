@@ -1,6 +1,8 @@
 call plug#begin('~/.config/nvim/autoload/plugged')
 
-    Plug 'neovimhaskell/haskell-vim'
+	" Plug 'morhetz/gruvbox'
+	Plug 'arcticicestudio/nord-vim'
+	Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
     " Plug 'posva/vim-vue'
     Plug 'SirVer/ultisnips'
     Plug 'airblade/vim-gitgutter'
@@ -16,8 +18,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'machakann/vim-highlightedyank'
     Plug 'maximbaz/lightline-ale'
     Plug 'mcchrish/nnn.vim'
-	Plug 'arcticicestudio/nord-vim'
-	" Plug 'morhetz/gruvbox'
+    Plug 'neovimhaskell/haskell-vim'
     Plug 'tpope/vim-commentary'
     Plug 'tpope/vim-surround'
     Plug 'ycm-core/YouCompleteMe'
