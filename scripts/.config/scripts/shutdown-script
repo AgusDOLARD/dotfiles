@@ -3,12 +3,15 @@
 DMENU=${DMENU:-dmenu}
 
 prompt="Shutdown?"
-cmd_list="Yes No"
+cmd_list="Yes No Reboot"
 
 ans="$(echo $cmd_list | sed 's/ /\n/g' | ${DMENU} -p "$prompt")"
 [[ -z $ans ]] && exit 1
 
 if [[ $ans = Yes ]]; then
-	printf $ans
 	shutdown now
+fi
+
+if [[ $ans = Reboot ]]; then
+	reboot
 fi
