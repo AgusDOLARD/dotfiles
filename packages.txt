@@ -1,5 +1,7 @@
 alacritty
 alsa-utils
+android-platform
+android-sdk-build-tools
 arc-gtk-theme
 autoconf
 automake
@@ -9,6 +11,7 @@ bison
 bluez-utils
 bslock
 bspwm
+clang
 clipmenu
 cmake
 docker-compose
@@ -18,17 +21,19 @@ etcher-bin
 fakeroot
 firefox
 firefox-tridactyl
+flake8
 flex
+flutter
 ghc
 grub
 jq
 lastpass-cli
-lftp
 light
 make
 man-db
 neofetch
 neovim
+ninja
 nnn
 numlockx
 nvidia
@@ -48,10 +53,8 @@ stow
 telegram-desktop
 timeshift
 transmission-qt
-ttf-fira-code
 ttf-font-awesome
 ttf-iosevka
-ttf-joypixels
 ttf-material-design-icons-git
 virtualbox
 wget
@@ -59,6 +62,6 @@ xorg-xev
 xorg-xinit
 xorg-xinput
 xorg-xsetroot
-yay
+yay-bin
 zsh-autosuggestions
 zsh-syntax-highlighting

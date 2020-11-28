@@ -5,6 +5,7 @@ let g:ale_linters = {
             \   'vue': ['eslint'],
             \   'json': ['jsonlint'],
             \   'python': ['flake8'],
+            \   'dart': ['dartanalyzer'],
             \   'haskell': ['hlint'],
             \   'c': ['clangtidy'],
             \   'vim': ['vint'] 
@@ -18,6 +19,7 @@ let g:ale_fixers = {
             \   'c': ['clangtidy'],
             \   '*': ['remove_trailing_lines'],
             \   'python': ['black'],
+            \   'dart': ['dartfmt'],
             \   'haskell': ['brittany'],
             \ }
 let g:ale_fix_on_save = 1

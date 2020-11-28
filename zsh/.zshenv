@@ -3,6 +3,8 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 
+export JAVA_HOME="/usr/lib/jvm/java-8-openjdk"
+export JAVA_OPTS="-XX:+IgnoreUnrecognizedVMOptions"
 export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export MACHINE_STORAGE_PATH="$XDG_DATA_HOME/docker-machine"
@@ -60,6 +62,14 @@ export NNN_PLUG='s:suedit;d:_dragon-drag-and-drop -a -x $nnn*'
 # Clipmenu
 export CM_SELECTIONS="primary clipboard"
 export CM_MAX_CLIPS=20
+
+# Android SDK
+export ANDROID_SDK_ROOT='/opt/android-sdk'
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools/
+export PATH=$PATH:$ANDROID_HOME/tools/bin/
+export PATH=$PATH:$ANDROID_HOME/tools/
+PATH=$ANDROID_HOME/emulator:$PATH
 
 path=("$SCRIPT_DIR" "$HOME/.local/bin" "$XDG_DATA_HOME" "$path[@]]")
 export PATH

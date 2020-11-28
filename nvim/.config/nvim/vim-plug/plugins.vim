@@ -22,6 +22,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'tpope/vim-commentary'
     Plug 'tpope/vim-surround'
     Plug 'ycm-core/YouCompleteMe'
+	Plug 'dart-lang/dart-vim-plugin'
+	Plug 'thosakwe/vim-flutter'
+	Plug 'natebosch/vim-lsc-dart'
 
 call plug#end()
 

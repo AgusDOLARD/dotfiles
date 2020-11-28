@@ -1,8 +1,12 @@
 #!/bin/bash
 
+DMENU=${DMENU:-dmenu}
+PROMPT='QR Generator'
 IMAGE_PATH='/tmp/qrcode.png'
 
-DATA="$(xsel -b -o)"
+CLIP="$(xsel -b -o)"
+
+DATA="$(${DMENU} -it "$CLIP" -p "$PROMPT")"
 
 qrencode -o $IMAGE_PATH $DATA
 feh $IMAGE_PATH

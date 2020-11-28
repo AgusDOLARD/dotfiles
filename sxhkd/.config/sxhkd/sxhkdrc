@@ -64,10 +64,21 @@ super + {_,shift + }q
 # set the window state
 super + f
 	bspc node focused.tiled -t fullscreen || bspc node focused.fullscreen -t tiled
+# set the window state
+super + Menu
+	bspc node focused.tiled -t floating || bspc node focused.floating -t tiled
 
 # focus the node in the given direction
 super + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
+
+# expand a window by moving one of its side outward
+super + {Left,Right}
+	bspc node -z {right -20 0,right 20 0}
+
+# contract a window by moving one of its side inward
+super + shift + {Left,Right}
+	bspc node -z {left -20 0,left 20 0}
 
 # focus the last node/desktop
 super + {grave,Tab}
