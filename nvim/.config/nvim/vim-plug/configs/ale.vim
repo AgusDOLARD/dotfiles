@@ -23,5 +23,6 @@ let g:ale_fixers = {
             \   'haskell': ['brittany'],
             \ }
 let g:ale_fix_on_save = 1
+let g:ale_javascript_prettier_options = '--single-quote --print-width 80 --trailing-comma none --arrow-parens always --tab-width 4 --no-semi'
 nmap <silent> <leader>[ <Plug>(ale_previous_wrap)
 nmap <silent> <leader>] <Plug>(ale_next_wrap)

@@ -44,6 +44,7 @@ picom-tryone-git
 pkgconf
 polybar
 popcorntime-bin
+prettier
 pulsemixer
 qrencode
 ripgrep
