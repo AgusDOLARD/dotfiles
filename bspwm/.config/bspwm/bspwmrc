@@ -8,6 +8,8 @@ bspc monitor -d 1 2 3 4 5 6 7 8 9
 bspc config initial_polarity first_child
 bspc config automatic_scheme spiral
 
+bsp-layout set tall 2 --master-size 0.6
+
 bspc config top_padding 40
 bspc config bottom_padding 20
 bspc config left_padding 20
@@ -33,4 +35,5 @@ bspc config gapless_monocle      true
 
 bspc rule -a firefox desktop='^1'
 bspc rule -a Zathura state=tiled
+bspc rule -a VirtualBox* state=tiled
 # bspc config -d ^1 window_gap 50

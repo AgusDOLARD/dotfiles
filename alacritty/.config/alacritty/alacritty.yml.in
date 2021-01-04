@@ -250,11 +250,11 @@ key_bindings:
   - { key: J,        mods: Control|Shift, action: ScrollPageDown }
   - { key: K,        mods: Control|Shift, action: ScrollPageUp }
   # - { key: G,        mods: Shift,   mode: ~Alt, action: ScrollToBottom }
-  - { key: Key0,     mods: Control,                 action: ResetFontSize    }
-  - { key: Equals,   mods: Control,                 action: IncreaseFontSize }
-  - { key: Add,      mods: Control,                 action: IncreaseFontSize }
-  - { key: Subtract, mods: Control,                 action: DecreaseFontSize }
-  - { key: Minus,    mods: Control,                 action: DecreaseFontSize }
+  # - { key: Key0,     mods: Control,                 action: ResetFontSize    }
+  # - { key: Equals,   mods: Control,                 action: IncreaseFontSize }
+  # - { key: Add,      mods: Control,                 action: IncreaseFontSize }
+  # - { key: Subtract, mods: Control,                 action: DecreaseFontSize }
+  # - { key: Minus,    mods: Control,                 action: DecreaseFontSize }
   # { mouse: Middle, action: PasteSelection }
   #- { key: Paste,                                action: Paste          }
   #- { key: Copy,                                 action: Copy           }

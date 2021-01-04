@@ -1,4 +1,5 @@
 xreplaceapps &
+xautolock -time 10 -locker autolock -corners -000 &
 numlockx &
 dunst &
 clipmenud &
