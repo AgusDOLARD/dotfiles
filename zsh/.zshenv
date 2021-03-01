@@ -71,5 +71,5 @@ export PATH=$PATH:$ANDROID_HOME/tools/bin/
 export PATH=$PATH:$ANDROID_HOME/tools/
 PATH=$ANDROID_HOME/emulator:$PATH
 
-path=("$SCRIPT_DIR" "$HOME/.local/bin" "$XDG_DATA_HOME" "$path[@]]")
+path=("$SCRIPT_DIR"  "$NPM_CONFIG_PREFIX/bin" "$HOME/.local/bin" "$XDG_DATA_HOME" "$path[@]]")
 export PATH

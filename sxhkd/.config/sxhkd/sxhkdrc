@@ -30,8 +30,8 @@ super + Return
 super + d
 	dmenu_run
 
-super + control + shift + {l,p}
-	{systemctl suspend && bslock,clipctl disable && $SCRIPT_DIR/lastpass-dmenu copy && clipctl enable}
+super + control + shift + l
+	$SCRIPT_DIR/autolock
 
 super + c
 	clipmenu

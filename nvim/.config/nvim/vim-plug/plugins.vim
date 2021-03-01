@@ -24,7 +24,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'ycm-core/YouCompleteMe'
 	Plug 'dart-lang/dart-vim-plugin'
 	Plug 'thosakwe/vim-flutter'
-	Plug 'natebosch/vim-lsc-dart'
 
 call plug#end()
 

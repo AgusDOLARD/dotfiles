@@ -5,6 +5,6 @@ FULLSCREENNODES=$(bspc query -N -n .fullscreen -d .focused)
 if [[ $FULLSCREENNODES ]]; then
 	xdotool mousemove 0 0
 else
-	amixer set Master mute
-	bslock	
+	systemctl suspend
+	bslock
 fi
