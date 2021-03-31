@@ -1,6 +1,12 @@
 #!/bin/sh
 
 FULLSCREENNODES=$(bspc query -N -n .fullscreen -d .focused)
+LIDSTATE=$(awk '{print $2}' /proc/acpi/button/lid/LID/state)
+
+function locknsuspend() {
+	systemctl suspend
+	bslock
+}
 
 if [[ $FULLSCREENNODES ]]; then
 	xdotool mousemove 0 0

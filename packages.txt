@@ -33,6 +33,7 @@ genymotion
 ghc
 gimp
 grub
+ifuse
 inkscape
 jq
 light
