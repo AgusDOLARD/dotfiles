@@ -13,6 +13,7 @@ alias exe='chmod +x'
 alias gss="git status"
 alias kalisave="docker commit $(docker ps | awk '/kali/ {print $1}') kali"
 alias l="ls -alh"
+alias ll='ls -a'
 alias ls='ls --color=always'
 alias n="nnn"
 alias p='sudo pacman'
