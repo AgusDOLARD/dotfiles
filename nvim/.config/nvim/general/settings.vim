@@ -13,8 +13,8 @@ set noswapfile
 set scrolloff=5
 set termguicolors
 set undofile
-set undodir=$XDG_DATA_HOME/nvim/undodir
-set viminfo+='1000,n$XDG_DATA_HOME/nvim/viminfo'
+set undodir=$HOME/.local/share/nvim/undodir
+set viminfo+='1000,n$HOME/.local/share/nvim/viminfo'
 set clipboard=unnamed
 set pastetoggle=<F12>
 
