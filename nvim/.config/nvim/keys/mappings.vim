@@ -24,9 +24,6 @@ nmap <leader>e :tabnew $MYVIMRC<CR>
 nmap <leader>q :wq<CR>
 nmap <leader>s :w<CR>
 nmap <leader>w :source ~/.config/nvim/init.vim<CR>
-nmap <silent> <F1> :call NewExercise()<CR>
-nmap <silent> <F2> :call NavigateExercises(1)<CR>
-nmap <silent> <F3> :call NavigateExercises(0)<CR>
 nmap gf <C-w>gF
 
 nnoremap <C-j> <C-d>
