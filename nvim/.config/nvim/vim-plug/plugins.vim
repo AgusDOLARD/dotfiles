@@ -6,6 +6,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Plug 'honza/vim-snippets'
     " Plug 'neovimhaskell/haskell-vim'
 	Plug 'arcticicestudio/nord-vim'
+	Plug 'neoclide/coc.nvim', { 'branch' : 'release' }
     Plug 'airblade/vim-gitgutter'
     Plug 'ap/vim-css-color'
     Plug 'easymotion/vim-easymotion'
