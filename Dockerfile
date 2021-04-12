@@ -1,6 +1,6 @@
 ###   BUILDER   ###
 FROM python:3.8.5-slim-buster as pip
-RUN pip3 install pynvim jedi black pylint
+RUN pip3 install pynvim jedi black pylint flake8
 
 ###   RUNNER   ###
 FROM python:3.8.5-alpine
@@ -36,4 +36,4 @@ RUN rm -rf /tmp/* && \
 
 WORKDIR /workspace
 
-CMD [ "nvim", "/workspace" ]
+CMD [ "zsh" ]
