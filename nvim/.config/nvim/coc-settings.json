@@ -7,13 +7,14 @@
 		"html",
 		"yaml",
 		"json",
-		"python"
+		"python",
+		"typescript"
 	],
-	// python config
 	"python.linting.enabled": true,
 	"python.linting.pylintEnabled": true,
+	"python.formatting.provider": "black",
 	"snippets.ultisnips.directories": [
 		"UltiSnips",
-		"~/.config/nvim/autoload/plugged/vim-snippets/UltiSnips/"
+		"~/.config/nvim/snippets"
 	]
 }

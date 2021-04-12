@@ -1,21 +1,15 @@
 call plug#begin('~/.config/nvim/autoload/plugged')
 
-    " Plug 'ycm-core/YouCompleteMe'
-    " Plug 'SirVer/ultisnips'
-    " Plug 'dense-analysis/ale'
-    " Plug 'honza/vim-snippets'
-    " Plug 'neovimhaskell/haskell-vim'
-    " Plug 'junegunn/fzf', { 'do': { -> fzf#install()  }  }
-    " Plug 'junegunn/fzf.vim'
 	Plug 'arcticicestudio/nord-vim'
 	Plug 'neoclide/coc.nvim', { 'branch' : 'release' }
     Plug 'airblade/vim-gitgutter'
+	Plug 'kien/ctrlp.vim'
     Plug 'ap/vim-css-color'
     Plug 'easymotion/vim-easymotion'
     Plug 'itchyny/lightline.vim'
+    Plug 'honza/vim-snippets'
     Plug 'jiangmiao/auto-pairs'
     Plug 'machakann/vim-highlightedyank'
-    Plug 'mcchrish/nnn.vim'
     Plug 'tpope/vim-commentary'
     Plug 'tpope/vim-surround'
 
