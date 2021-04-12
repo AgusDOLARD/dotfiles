@@ -22,4 +22,9 @@ inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 
 " :nnoremap <leader>n :CocCommand explorer<CR>
-
+let g:coc_global_extensions = [
+      \ 'coc-python',
+      \ 'coc-snippets',
+      \ 'coc-json',
+      \ 'coc-tsserver',
+	  \ ]

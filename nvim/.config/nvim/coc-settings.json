@@ -10,9 +10,12 @@
 		"python",
 		"typescript"
 	],
+	"json.format.enable": true,
+	"javascript.format.enabled": true,
+	"typescript.format.enabled": true,
+	"python.formatting.provider": "black",
 	"python.linting.enabled": true,
 	"python.linting.pylintEnabled": true,
-	"python.formatting.provider": "black",
 	"snippets.ultisnips.directories": [
 		"UltiSnips",
 		"~/.config/nvim/snippets"
