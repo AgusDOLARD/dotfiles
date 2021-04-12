@@ -2,7 +2,7 @@ alias -s pdf="zathura"
 
 alias -g L='| less'
 
-alias dvim='docker run -it -v $(pwd):/workspace nvim'
+alias dvim='docker run -it -v $(pwd):/workspace dolard/vim:latest'
 alias p='sudo apt'
 alias qr='qrcode-terminal'
 alias see='image'

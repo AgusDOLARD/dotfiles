@@ -18,7 +18,7 @@ prompt spaceship
 
 # Source plugins
 for f in $ZSHPLUGS/*; do source "$f"; done
-for j in /usr/share/zsh/plugins/zsh-*/*.plugin.zsh; do source "$j"; done
+[[ -d /usr/share/zsh/plugins ]] && for j in /usr/share/zsh/plugins/zsh-*/*.plugin.zsh; do source "$j"; done
 
 # Enable ViMode
 bindkey -v
