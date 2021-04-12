@@ -14,7 +14,7 @@ RUN	apk add -U --no-cache \
 RUN npm install --global --no-cache neovim
 
 #DOTS
-WORKDIR $HOME
+WORKDIR /root
 RUN mkdir -p .cache/zsh && \
 	touch .cache/zsh/history .cache/z
 COPY ./nvim/. .
@@ -26,7 +26,7 @@ RUN sh -c 'curl -fLo "$HOME/.local/share"/nvim/site/autoload/plug.vim --create-d
 RUN nvim  --headless +PlugInstall +qall
 
 #PROMPT
-WORKDIR $HOME/.config/zsh
+WORKDIR /root/.config/zsh
 ENV PROMPT "PROMPT='%F{magenta}%n%f:%~$ '"
 RUN sed -i "s/prompt\ spaceship/${PROMPT}/g" .zshrc
 
