@@ -11,4 +11,5 @@ Dockerized
 
 ``` bash
 docker pull dolard/vim
+docker run -it -v $(pwd):/workspace dolard/vim:latest
 ```

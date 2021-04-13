@@ -3,8 +3,8 @@
 export YSU_VERSION='1.7.3'
 
 if ! type "tput" > /dev/null; then
-    printf "WARNING: tput command not found on your PATH.\n"
-    printf "zsh-you-should-use will fallback to uncoloured messages\n"
+    # printf "WARNING: tput command not found on your PATH.\n"
+    # printf "zsh-you-should-use will fallback to uncoloured messages\n"
 else
     NONE="$(tput sgr0)"
     BOLD="$(tput bold)"

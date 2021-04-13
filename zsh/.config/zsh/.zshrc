@@ -13,12 +13,8 @@ zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
-# Theme
-prompt spaceship
-
 # Source plugins
 for f in $ZSHPLUGS/*; do source "$f"; done
-[[ -d /usr/share/zsh/plugins ]] && for j in /usr/share/zsh/plugins/zsh-*/*.plugin.zsh; do source "$j"; done
 
 # Enable ViMode
 bindkey -v
