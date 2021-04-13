@@ -8,8 +8,8 @@ COPY --from=pip /usr/local/lib/python3.8/site-packages /usr/local/lib/python3.8/
 
 #PKGS
 RUN	apk add -U --no-cache \
- 	neovim git \
-	curl zsh nodejs npm 
+ 	neovim git zsh-vcs \
+	curl nodejs npm 
 RUN npm install --global --no-cache neovim
 
 #DOTS
