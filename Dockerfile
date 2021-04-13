@@ -6,11 +6,12 @@ RUN pip3 install pynvim jedi black pylint flake8
 FROM python:3.8.5-alpine
 COPY --from=pip /usr/local/lib/python3.8/site-packages /usr/local/lib/python3.8/site-packages
 
+ENV TZ "America/Argentina/Cordoba"
+
 #PKGS
 RUN	apk add -U --no-cache \
- 	neovim git \
-	curl zsh \
-	nodejs npm
+ 	neovim git tzdata \
+	curl zsh nodejs npm 
 RUN npm install --global --no-cache neovim
 
 #DOTS
@@ -28,6 +29,7 @@ RUN nvim  --headless +PlugInstall +qall
 #PROMPT
 WORKDIR /root/.config/zsh
 ENV PROMPT "PROMPT='%F{magenta}%n%f:%~$ '"
+ENV RPROMPT "%T"
 RUN sed -i "s/prompt\ spaceship/${PROMPT}/g" .zshrc
 
 #CLEANUP

@@ -1,13 +1,13 @@
 call plug#begin('~/.config/nvim/autoload/plugged')
 
 	Plug 'arcticicestudio/nord-vim'
+	Plug 'kien/ctrlp.vim'
 	Plug 'neoclide/coc.nvim', { 'branch' : 'release' }
     Plug 'airblade/vim-gitgutter'
-	Plug 'kien/ctrlp.vim'
     Plug 'ap/vim-css-color'
     Plug 'easymotion/vim-easymotion'
-    Plug 'itchyny/lightline.vim'
     Plug 'honza/vim-snippets'
+    Plug 'itchyny/lightline.vim'
     Plug 'jiangmiao/auto-pairs'
     Plug 'machakann/vim-highlightedyank'
     Plug 'tpope/vim-commentary'
