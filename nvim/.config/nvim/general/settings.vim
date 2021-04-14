@@ -18,8 +18,6 @@ set viminfo+='1000,n$HOME/.local/share/nvim/viminfo'
 set clipboard=unnamed
 set pastetoggle=<F12>
 
-colorscheme nord
-
 let g:timeoutlen=100
 let g:termsize=10*0
 let g:plug_window = 'noautocmd vertical topleft new'

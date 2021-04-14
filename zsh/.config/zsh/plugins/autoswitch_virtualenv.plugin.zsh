@@ -24,7 +24,7 @@ function _validated_source() {
 
 function _virtual_env_dir() {
     local venv_name="$1"
-    local VIRTUAL_ENV_DIR="${AUTOSWITCH_VIRTUAL_ENV_DIR:-$HOME/.virtualenvs}"
+    local VIRTUAL_ENV_DIR="${AUTOSWITCH_VIRTUAL_ENV_DIR:-$XDG_CONFIG_HOME/.virtualenvs}"
     mkdir -p "$VIRTUAL_ENV_DIR"
     printf "%s/%s" "$VIRTUAL_ENV_DIR" "$venv_name"
 }

@@ -10,5 +10,4 @@ source $HOME/.config/nvim/vim-plug/configs/ctrlp.vim
 source $HOME/.config/nvim/vim-plug/configs/autoPairs.vim
 source $HOME/.config/nvim/vim-plug/configs/easyMotion.vim
 source $HOME/.config/nvim/vim-plug/configs/gitGutter.vim
-source $HOME/.config/nvim/vim-plug/configs/highlightedYank.vim
 source $HOME/.config/nvim/vim-plug/configs/lightline.vim
