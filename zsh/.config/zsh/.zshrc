@@ -16,6 +16,11 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 # Source plugins
 for f in $ZSHPLUGS/*; do source "$f"; done
 
+# ssh into tmux
+if [[ -n "$PS1"  ]] && [[ -z "$TMUX"  ]] && [[ -n "$SSH_CONNECTION"  ]]; then
+	  tmux attach-session -t ssh_tmux || tmux new-session -s ssh_tmux
+fi
+
 # Enable ViMode
 bindkey -v
 bindkey -M menuselect 'h' vi-backward-char
@@ -25,6 +30,10 @@ bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
 bindkey -M viins jj vi-cmd-mode 
 bindkey "^[[3~" delete-char
+
+# CTRL-R - Paste the selected command from history into the command line
+FZFKEYS='/usr/share/doc/fzf/examples/key-bindings.zsh'
+[ -f $FZFKEYS ] && source $FZFKEYS 
 
 # ci"
 autoload -U select-quoted

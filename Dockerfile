@@ -9,7 +9,7 @@ COPY --from=pip /usr/local/lib/python3.8/site-packages /usr/local/lib/python3.8/
 #PKGS
 RUN	apk add -U --no-cache \
  	neovim git zsh-vcs \
-	curl nodejs npm 
+	curl nodejs npm tmux
 RUN npm install --global --no-cache neovim
 
 #DOTS
@@ -18,6 +18,7 @@ RUN mkdir -p .cache/zsh && \
 	touch .cache/zsh/history .cache/z
 COPY ./nvim/. .
 COPY ./zsh/. .
+COPY ./tmux/. .
 
 #VIM PLUG
 RUN sh -c 'curl -fLo "$HOME/.local/share"/nvim/site/autoload/plug.vim --create-dirs \
@@ -30,4 +31,4 @@ RUN rm -rf /tmp/* && \
 
 WORKDIR /workspace
 
-CMD [ "zsh" ]
+CMD [ "tmux", "new", "zsh" ]
