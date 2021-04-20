@@ -1,20 +1,12 @@
-alias -s pdf="zathura"
-
-alias -g L='| less'
-
-alias awsdebian="ssh -i "~/.ssh/debian.pem" admin@ec2-18-228-219-0.sa-east-1.compute.amazonaws.com"
 alias byeOrphans='sudo pacman -Rns $(pacman -Qtdq)'
-alias compose='docker-compose'
+alias ccd="cd '${DOTS:-$HOME/.dots}'"
 alias cya="rm -rf"
-alias d='docker'
 alias dps="docker ps --format 'table {{.ID}}\t{{.Image}}\t{{.Names}}\t{{.Size}}\t{{.Status}}'"
 alias dvim='docker run -it -v $(pwd):/workspace dolard/vim:latest'
 alias exe='chmod +x'
 alias gss="git status"
-alias l="ls -alh"
 alias ll='ls -a'
-alias ls='ls --color=always'
-alias n="nnn"
+alias l="ls -alh"
 alias p='sudo apt'
 alias qr='qrcode-terminal'
 alias see='image'

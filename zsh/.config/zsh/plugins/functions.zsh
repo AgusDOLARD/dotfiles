@@ -14,4 +14,4 @@ gitpush() {
     git pull
     git push
 }
-cc() { find $HOME/.dots -type d \( -name autoload -o -name .git \) -prune -o -type f -print | fzf --height 40% --reverse | xargs -r $EDITOR }
+cc() { find "${DOTS:-$HOME/.dots}" -type d \( -name autoload -o -name .git \) -prune -o -type f -print | fzf | xargs -r $EDITOR }
