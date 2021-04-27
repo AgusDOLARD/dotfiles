@@ -64,7 +64,7 @@ modules-left =  bspwm
 ;modules-center = previous playpause next spotify
 ; Mpd
 modules-center = time 
-modules-right = temperature backlight alsa wlan battery
+modules-right = temperature backlight pulseaudio wlan battery
 
 scroll-up = bspwn-wsnext
 scroll-down = bspwn-wsprev
@@ -207,7 +207,6 @@ ramp-volume-2 = ""
 format-volume-foreground = ${colors.color6}
 format-volume = <ramp-volume> <label-volume>
 label-muted = muted
-
 
 [module/pulseaudio]
 type = internal/pulseaudio
