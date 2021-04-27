@@ -49,7 +49,7 @@ export TERMINAL="alacritty"
 export BROWSER="firefox"
 export IMAGE="feh"
 export WM="bspwm"
-export PAGER="less"
+export PAGER="nvim -c 'set ft=man' -"
 export TERM="xterm-256color"
 
 export WINSDD="/mnt/c/Users/agust"
