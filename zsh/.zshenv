@@ -4,6 +4,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 
 export DOTS="$HOME/.dots"
+export CARGO_HOME="$XDG_DATA_HOME/cargo"
 export TMUX_CONF="$XDG_CONFIG_HOME/tmux/tmux.conf"
 export FZF_DEFAULT_OPTS="--height 40% --reverse"
 export JAVA_HOME="/usr/lib/jvm/java-8-openjdk"
