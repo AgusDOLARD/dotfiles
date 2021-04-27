@@ -5,14 +5,13 @@ alias dps="docker ps --format 'table {{.ID}}\t{{.Image}}\t{{.Names}}\t{{.Size}}\
 alias dvim='docker run -it -v $(pwd):/workspace dolard/vim:latest'
 alias exe='chmod +x'
 alias gss="git status"
-alias ll='ls -a'
+alias ls='ls --color=auto'
 alias l="ls -alh"
-alias p='sudo apt'
-alias qr='qrcode-terminal'
-alias see='image'
+alias ll='ls -a'
+alias p='sudo pacman'
 alias src='source $XDG_CONFIG_HOME/zsh/.zshrc && source $HOME/.zshenv'
 alias sudo='sudo '
-alias svim="sudo -E nvim"
+alias svim="sudo -E $EDITOR"
 alias vim="$EDITOR"
 alias wget='wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"'
 alias yolo="gitpush $(curl -s http://whatthecommit.com/index.txt)"

@@ -1,4 +1,4 @@
-==========================================================
+;==========================================================
 ;
 ;
 ;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
@@ -64,7 +64,7 @@ modules-left =  bspwm
 ;modules-center = previous playpause next spotify
 ; Mpd
 modules-center = time 
-modules-right = temperature backlight pulseaudio wlan battery
+modules-right = temperature backlight alsa wlan battery
 
 scroll-up = bspwn-wsnext
 scroll-down = bspwn-wsprev
@@ -108,6 +108,7 @@ label-empty =
 [module/backlight]
 type = internal/backlight
 card = intel_backlight
+enable-scroll = true
 format-foreground = ${colors.color6}
 label-padding=1
 format = <label>
@@ -193,6 +194,19 @@ date = "%A %d %b"
 
 label = %date%, %time%
 label-padding = 2
+
+[module/alsa]
+type = internal/alsa
+
+interval = 5
+
+ramp-volume-0 = ""
+ramp-volume-1 = ""
+ramp-volume-2 = ""
+
+format-volume-foreground = ${colors.color6}
+format-volume = <ramp-volume> <label-volume>
+label-muted = muted
 
 
 [module/pulseaudio]

@@ -9,8 +9,6 @@ XF86MonBrightness{Down,Up}
 # Volume
 XF86Audio{Lower,Raise}Volume
 	amixer set Master 5%{-,+}
-XF86Audio{Prev,Next}
-	amixer set Master 5%{-,+}
 
 # Mute
 {_,shift + }XF86AudioMute
@@ -24,8 +22,8 @@ XF86TouchpadToggle
 Print
 	$SCRIPT_DIR/dmenuscrot
 
-super + Return
-	$TERMINAL
+super + {shift,_} + Return
+	$TERMINAL {_,-e $SCRIPT_DIR/tmuxsession}
 
 super + d
 	dmenu_run
@@ -54,8 +52,11 @@ super + Escape
 ########################################################################
 
 # quit/restart bspwm
-super + shift + {q,r}
-	bspc {quit,wm -r}
+super + shift + q
+	$SCRIPT_DIR/prompt "Kill BSPWM" 'bspc wm -r'
+
+super + shift + r
+	bspc wm -r
 
 # close and kill
 super + {_,shift + }q

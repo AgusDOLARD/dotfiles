@@ -4,9 +4,9 @@ numlockx &
 dunst &
 clipmenud &
 picom --experimental-backends &
-feh --bg-scale ~/Pictures/wall.* --no-fehbg &
+feh --bg-scale ~/.dots/wallpaper.* --no-fehbg &
 setxkbmap -option caps:backspace &
 xset r 66 &
 pgrep -x sxhkd > /dev/null || sxhkd &
-dwmblocks &
+/* dwmblocks & */
 exec bspwm
