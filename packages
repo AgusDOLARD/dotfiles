@@ -5,6 +5,8 @@ automake
 base
 binutils
 bison
+bluez
+bluez-utils
 bspwm
 clipmenu
 dhcpcd
@@ -40,10 +42,12 @@ openssh
 otf-font-awesome-5-free
 paru
 patch
+pavucontrol
 picom-jonaburg-git
+pipewire-alsa
+pipewire-pulse
 pkgconf
 polybar
-pulseaudio-alsa
 python-pip
 reflector
 scrot
