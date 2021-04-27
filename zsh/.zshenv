@@ -4,7 +4,6 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 
 export DOTS="$HOME/.dots"
-export LESSHISTFILE=-
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
 export TMUX_CONF="$XDG_CONFIG_HOME/tmux/tmux.conf"
 export FZF_DEFAULT_OPTS="--height 40% --reverse"
@@ -45,11 +44,13 @@ else
 fi
 
 export READER="zathura"
+export LESSHISTFILE=-
 export TERMINAL="alacritty"
 export BROWSER="firefox"
 export IMAGE="feh"
 export WM="bspwm"
 export PAGER="nvim -c 'set ft=man' -"
+export GIT_PAGER="less"
 export TERM="xterm-256color"
 
 export WINSDD="/mnt/c/Users/agust"

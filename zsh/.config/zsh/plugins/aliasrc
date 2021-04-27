@@ -5,10 +5,9 @@ alias dps="docker ps --format 'table {{.ID}}\t{{.Image}}\t{{.Names}}\t{{.Size}}\
 alias dvim='docker run -it -v $(pwd):/workspace dolard/vim:latest'
 alias exe='chmod +x'
 alias gss="git status"
-alias gdd="git diff --color=always | less -r"
-alias ls='ls --color=auto'
 alias l="ls -alh"
 alias ll='ls -a'
+alias ls='ls --color=auto'
 alias p='sudo pacman'
 alias src='source $XDG_CONFIG_HOME/zsh/.zshrc && source $HOME/.zshenv'
 alias sudo='sudo '

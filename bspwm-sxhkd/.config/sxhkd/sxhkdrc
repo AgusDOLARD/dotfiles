@@ -56,7 +56,7 @@ super + shift + q
 	$SCRIPT_DIR/prompt "Kill BSPWM" 'bspc quit'
 
 super + shift + r
-	bspc wm -r
+	bspc wm -r && notify-send "bspwm" "Config reloaded"
 
 # close and kill
 super + {_,shift + }q
