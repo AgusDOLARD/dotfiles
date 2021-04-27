@@ -53,7 +53,7 @@ super + Escape
 
 # quit/restart bspwm
 super + shift + q
-	$SCRIPT_DIR/prompt "Kill BSPWM" 'bspc wm -r'
+	$SCRIPT_DIR/prompt "Kill BSPWM" 'bspc quit'
 
 super + shift + r
 	bspc wm -r
