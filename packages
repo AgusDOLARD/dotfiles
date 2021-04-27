@@ -7,8 +7,10 @@ binutils
 bison
 bluez
 bluez-utils
+bslock
 bspwm
 clipmenu
+cronie
 dhcpcd
 dmenu-vus-git
 docker

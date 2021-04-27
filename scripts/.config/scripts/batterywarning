@@ -10,6 +10,5 @@ elif [ "$battery_level" -le 10 ] && [ "$battery_status" == "Discharging" ]
 then
   notify-send -u critical "Battery critical" "Battery level is ${battery_level}%! Suspending..."
   sleep 5
-  systemctl suspend 
-  bslock
+  $SCRIPT_DIR/autolock
 fi

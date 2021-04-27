@@ -11,6 +11,5 @@ function locknsuspend() {
 if [[ $FULLSCREENNODES ]]; then
 	xdotool mousemove 0 0
 else
-	systemctl suspend
-	bslock
+	locknsuspend
 fi
