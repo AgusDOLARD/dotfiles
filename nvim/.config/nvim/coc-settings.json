@@ -12,8 +12,12 @@
 	],
 	"json.format.enable": true,
 	"javascript.format.enabled": true,
+	"javascript.format.semicolons": "remove",
 	"typescript.format.enabled": true,
-	"python.formatting.provider": "black",
+	"typescript.showUnused": false,
+	"typescript.format.semicolons": "remove",
+	"typescript.suggest.autoImports": true,
+	"typescript.preferences.quoteStyle": "single",
 	"python.linting.enabled": true,
 	"python.linting.pylintEnabled": true,
 	"snippets.ultisnips.directories": [
