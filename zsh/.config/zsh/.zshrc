@@ -32,7 +32,7 @@ bindkey -M viins jj vi-cmd-mode
 bindkey "^[[3~" delete-char
 
 # CTRL-R - Paste the selected command from history into the command line
-FZFKEYS='/usr/share/doc/fzf/examples/key-bindings.zsh'
+FZFKEYS='/usr/share/fzf/key-bindings.zsh'
 [ -f $FZFKEYS ] && source $FZFKEYS 
 
 # ci"
