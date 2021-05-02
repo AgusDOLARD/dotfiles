@@ -1,0 +1,17 @@
+#!/bin/bash
+
+DEVICE="USB Gaming Mouse"
+PROP="libinput Natural Scrolling Enabled"
+
+# Change mouse scroll direction
+for i in $(xinput list | grep "$DEVICE" | perl -n -e'/id=(\d+)/ && print "$1\n"') ; do
+	if  read p < <(xinput list-props $i  | grep "$PROP" | perl -n -e'/(\d+).*1$/ && print "$1\n"') ; then
+		xinput set-prop "$i" "$p" 0
+	fi		
+done
+
+# Map Caps Lock to Backspace
+setxkbmap -option caps:backspace
+
+# Repeatable caps
+xset r 66
