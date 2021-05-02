@@ -2,15 +2,12 @@
 #								KEYBINDS							   #
 ########################################################################
 
-# Brightness
 XF86MonBrightness{Down,Up}
 	light {-U,-A} 10
 
-# Volume
 XF86Audio{Lower,Raise}Volume
 	amixer set Master 5%{-,+}
 
-# Mute
 {_,shift + }XF86AudioMute
 	{amixer set Master toggle, $TERMINAL -e pulsemixer }
 
@@ -18,7 +15,6 @@ XF86Audio{Lower,Raise}Volume
 XF86TouchpadToggle
 	$SCRIPT_DIR/touchpad
 
-# Screenshot
 Print
 	$SCRIPT_DIR/dmenuscrot
 
@@ -28,63 +24,81 @@ super + {shift,_} + Return
 super + d
 	dmenu_run
 
+# Lock
 super + control + shift + l
 	$SCRIPT_DIR/autolock
 
+# Clipboard history
 super + c
 	clipmenu
 
+# Shutdown script
 control + shift + Escape
 	$SCRIPT_DIR/shutdown-script
 
-# Some scripts
-super + shift + o ; {p,w,b,d,t,q}
-  	{$SCRIPT_DIR/toggleprogram "picom" "--experimental-backends",$SCRIPT_DIR/dmenuwifi,$SCRIPT_DIR/btheadphones,$SCRIPT_DIR/toggleprogram "dunst",$SCRIPT_DIR/todo,$SCRIPT_DIR/qrclipboard}
+# This menu lol
+super + shift + Tab
+	$SCRIPT_DIR/helpbindings
+
+# Toggle picom
+super + shift + o ; p
+  	$SCRIPT_DIR/toggleprogram "picom" "--experimental-backends"
+
+# Wifi dmenu
+super + shift + o ; w
+	$SCRIPT_DIR/dmenuwifi
+
+# Bluetooth Connect
+super + shift + o ; b
+	$SCRIPT_DIR/btheadphones
+
+# Toggle dunst
+super + shift + o ; d
+	$SCRIPT_DIR/toggleprogram "dunst"
+
+# Generate QR from image
+super + shift + o ; q
+	$SCRIPT_DIR/qrclipboard}
 
 # Reload SXHKD
 super + Escape
 	$SCRIPT_DIR/killandnotify "sxhkd" "Config reloaded" && sxhkd &
 
 
-
 ########################################################################
 #								BSPWM								   #
 ########################################################################
 
-# quit/restart bspwm
+# Kill BSPWM
 super + shift + q
 	$SCRIPT_DIR/prompt "Kill BSPWM" 'bspc quit'
 
+# Reload BSPWM
 super + shift + r
 	bspc wm -r && notify-send "bspwm" "Config reloaded"
 
-# close and kill
 super + {_,shift + }q
 	bspc node -{c,k}
 
-# set the window state
+# Toggle fullscreen
 super + f
 	bspc node focused.tiled -t fullscreen || bspc node focused.fullscreen -t tiled
-# set the window state
+
+# Toggle floating
 super + Menu
 	bspc node focused.tiled -t floating || bspc node focused.floating -t tiled
 
-# focus the node in the given direction
 super + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
 
-# expand a window by moving one of its side outward
 super + {Left,Right}
 	bspc node -z {right -20 0,right 20 0}
 
-# contract a window by moving one of its side inward
 super + shift + {Left,Right}
 	bspc node -z {left -20 0,left 20 0}
 
-# focus the last node/desktop
 super + {grave,Tab}
 	bspc {node,desktop} -f last
 
-# focus or send to the given desktop
 super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
