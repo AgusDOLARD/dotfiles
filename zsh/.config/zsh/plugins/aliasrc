@@ -15,9 +15,8 @@ alias vim="$EDITOR"
 alias wget='wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"'
 alias yolo="gitpush $(curl -s http://whatthecommit.com/index.txt)"
 if (( $+commands[pacman] )); then
-	PKGMAN=pacman
+	alias p='sudo pacman'
 fi
 if (( $+commands[apt] )); then
-	PKGMAN=apt
+	alias p='sudo apt'
 fi
-alias p='sudo $PKGMAN'
