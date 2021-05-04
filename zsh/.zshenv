@@ -33,7 +33,7 @@ export ZDOTDIR="$HOME/.config/zsh"
 # export ZSH="$XDG_CONFIG_HOME/oh-my-zsh"
 
 # Apps
-if (( $+commands[pacman] )); then
+if [ -x "$(command -v nvim)" ]; then
 	export EDITOR="nvim"
 	export EDITOR="nvim"
 	export VISUAL="nvim"
