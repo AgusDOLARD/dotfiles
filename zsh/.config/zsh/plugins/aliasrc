@@ -8,10 +8,16 @@ alias gss="git status"
 alias l="ls -alh"
 alias ll='ls -a'
 alias ls='ls --color=auto'
-alias p='sudo pacman'
 alias src='source $XDG_CONFIG_HOME/zsh/.zshrc && source $HOME/.zshenv'
 alias sudo='sudo '
 alias svim="sudo -E $EDITOR"
 alias vim="$EDITOR"
 alias wget='wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"'
 alias yolo="gitpush $(curl -s http://whatthecommit.com/index.txt)"
+if (( $+commands[pacman] )); then
+	PKGMAN=pacman
+fi
+if (( $+commands[apt] )); then
+	PKGMAN=apt
+fi
+alias p='sudo $PKGMAN'
