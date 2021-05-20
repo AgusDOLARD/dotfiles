@@ -14,6 +14,7 @@ cronie
 dhcpcd
 dmenu-vus-git
 docker
+docker-compose
 dosfstools
 dunst
 efibootmgr
