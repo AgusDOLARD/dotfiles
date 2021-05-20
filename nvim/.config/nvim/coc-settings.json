@@ -13,6 +13,7 @@
 	"json.format.enable": true,
 	"javascript.format.enabled": true,
 	"javascript.format.semicolons": "remove",
+	"javascript.preferences.quoteStyle": "single",
 	"typescript.format.enabled": true,
 	"typescript.showUnused": false,
 	"typescript.format.semicolons": "remove",
