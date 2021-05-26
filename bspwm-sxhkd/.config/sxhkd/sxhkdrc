@@ -3,11 +3,18 @@
 ########################################################################
 
 XF86MonBrightness{Down,Up}
-# super + shift + alt + {j,k}
+super + shift + alt + {j,k}
+	light {-U,-A} 10
+
+# Screen brightness
+super + shift + alt + {j,k}
 	light {-U,-A} 10
 
 XF86Audio{Lower,Raise}Volume
-# super + shift + control + {j,k}
+	amixer set Master 5%{-,+}
+
+# Volume controler
+super + shift + control + {j,k}
 	amixer set Master 5%{-,+}
 
 {_,shift + }XF86AudioMute

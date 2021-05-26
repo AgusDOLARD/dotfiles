@@ -25,6 +25,10 @@ let &t_SI.="\e[6 q" "SI = INSERT mode
 let &t_SR.="\e[3 q" "SR = REPLACE mode
 let &t_EI.="\e[1 q" "EI = NORMAL mode]
 
+" Python location
+let g:python_host_prog  = '/usr/bin/python2'
+let g:python3_host_prog  = '/usr/bin/python3'
+
 autocmd InsertEnter * norm zz
 autocmd InsertLeave * set nopaste
 
