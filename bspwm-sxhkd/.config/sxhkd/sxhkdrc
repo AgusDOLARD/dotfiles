@@ -2,14 +2,15 @@
 #								KEYBINDS							   #
 ########################################################################
 
+# Screen brightness
 XF86MonBrightness{Down,Up}
-super + shift + alt + {j,k}
 	light {-U,-A} 10
 
 # Screen brightness
 super + shift + alt + {j,k}
 	light {-U,-A} 10
 
+# Volume controler
 XF86Audio{Lower,Raise}Volume
 	amixer set Master 5%{-,+}
 
