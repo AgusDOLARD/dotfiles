@@ -49,7 +49,7 @@ selection:
 
 mouse:
   hide_when_typing: true
-  url:
+  hints:
     launcher:
       program: xdg-open
       args: []
