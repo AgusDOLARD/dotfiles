@@ -1,4 +1,4 @@
-nnoremap <leader>p :CtrlP <CR>
+" nnoremap <leader>p :CtrlP <CR>
 let g:ctrlp_open_new_file = 't'
 let g:ctrlp_open_multiple_files = 't'
 let g:ctrlp_show_hidden = 1
