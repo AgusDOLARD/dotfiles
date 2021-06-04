@@ -68,7 +68,7 @@ super + shift + o ; d
 
 # Generate QR from image
 super + shift + o ; q
-	$SCRIPT_DIR/qrclipboard}
+	$SCRIPT_DIR/qrclipboard
 
 # Reload SXHKD
 super + Escape
