@@ -15,6 +15,14 @@ gitpush() {
     git push
 }
 cc() { find "${DOTS:-$HOME/.dots}" -type d \( -name autoload -o -name .git \) -prune -o -type f -print | fzf | xargs -r $EDITOR }
+fkill() {
+  pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
+
+  if [ "x$pid" != "x" ]
+  then
+    kill -${1:-9} $pid
+  fi
+}
 
 if (( $+commands[pacman] )); then
 	command_not_found_handler() {
