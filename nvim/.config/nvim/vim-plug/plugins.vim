@@ -1,6 +1,7 @@
 call plug#begin('~/.config/nvim/autoload/plugged')
 
     Plug 'airblade/vim-gitgutter'
+	Plug 'metakirby5/codi.vim'
 	Plug 'arcticicestudio/nord-vim'
     Plug 'honza/vim-snippets'
     Plug 'easymotion/vim-easymotion'
