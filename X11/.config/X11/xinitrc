@@ -5,7 +5,7 @@ dunst &
 clipmenud &
 picom --experimental-backends &
 feh --bg-scale ~/.dots/wallpaper.* --no-fehbg &
-setxkbmap -option caps:backspace &
+setxkbmap us -option caps:backspace &
 xset r 66 &
 pgrep -x sxhkd > /dev/null || sxhkd &
 /* dwmblocks & */

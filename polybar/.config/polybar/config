@@ -64,7 +64,7 @@ modules-left =  bspwm
 ;modules-center = previous playpause next spotify
 ; Mpd
 modules-center = time 
-modules-right = temperature backlight pulseaudio wlan battery
+modules-right = temperature pulseaudio wlan battery
 
 scroll-up = bspwn-wsnext
 scroll-down = bspwn-wsprev
@@ -95,15 +95,17 @@ enable-click = true
 reverse-scroll = false
 
 label-focused = 
-label-focused-foreground = ${colors.foreground}
+label-focused-foreground = ${colors.color3}
 label-focused-padding = 1
 
 label-occupied = 
-label-occupied-foreground = ${colors.foreground}
+label-occupied-foreground = ${colors.color5}
 label-occupied-padding = 1
 
 
-label-empty =
+label-empty = 
+label-empty-padding = 1
+
 
 [module/backlight]
 type = internal/backlight

@@ -4,22 +4,22 @@
 
 # Screen brightness
 XF86MonBrightness{Down,Up}
-	light {-U,-A} 10
+	light {-U,-A} 10 && $SCRIPT_DIR/brightnoti
 
 # Screen brightness
 super + shift + alt + {j,k}
-	light {-U,-A} 10
+	light {-U,-A} 10 && $SCRIPT_DIR/brightnoti
 
 # Volume controler
 XF86Audio{Lower,Raise}Volume
-	amixer set Master 5%{-,+}
+	pamixer -{d,i} 5 | $SCRIPT_DIR/volumenoti
 
 # Volume controler
 super + shift + control + {j,k}
-	amixer set Master 5%{-,+}
+	pamixer -{d,i} 5 | $SCRIPT_DIR/volumenoti
 
-{_,shift + }XF86AudioMute
-	{amixer set Master toggle, $TERMINAL -e pulsemixer }
+XF86AudioMute
+	pamixer -t | $SCRIPT_DIR/volumenoti
 
 # Disable touchpad
 XF86TouchpadToggle

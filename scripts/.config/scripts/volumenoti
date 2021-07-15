@@ -1,0 +1,19 @@
+#!/bin/bash
+# Script to send current volume notification to dunstify 
+# need depencies pamixer, dunstify and canberra-gtk-play for sound
+# add this script to you volume control bind
+msgID="2345"
+volume="$(pamixer --get-volume)"
+muted="$(pamixer --get-mute)"
+bar=$(seq -s "─" $(($volume / 5)) | sed 's/[0-9]//g')
+
+# check volume
+if [ "$muted" == "false" ]; then
+	if [ "$volume" -gt "65" ]; then
+		dunstify  "  $bar" -t 800 -r $msgID
+	else
+		dunstify  "  $bar" -t 800 -r $msgID
+	fi
+else
+	dunstify  "  Muted " -t 800 -r $msgID
+fi
