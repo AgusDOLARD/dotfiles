@@ -5,6 +5,7 @@ autoload -U promptinit; promptinit
 
 _comp_options+=(globdots)
 
+setopt prompt_subst
 setopt autocd
 setopt INC_APPEND_HISTORY
 setopt HIST_IGNORE_DUPS
@@ -12,6 +13,7 @@ setopt HIST_IGNORE_DUPS
 zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+
 
 # Source plugins
 for f in $ZSHPLUGS/*; do source "$f"; done
@@ -30,6 +32,7 @@ bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
 bindkey -M viins jj vi-cmd-mode 
 bindkey "^[[3~" delete-char
+
 
 # CTRL-R - Paste the selected command from history into the command line
 FZFKEYS='/usr/share/fzf/key-bindings.zsh'
@@ -52,3 +55,15 @@ for m in visual viopp; do
     bindkey -M $m $c select-bracketed
   done
 done
+
+# Prompt
+PS1NORMAL="%B%F{blue}%~%f%b %F{magenta}➜ %f"
+PS1INSERT="%B%F{blue}%~%f%b ➜ "
+PS1=$PS1INSERT
+function zle-line-init zle-keymap-select {         
+  PS1="${${KEYMAP/vicmd/$PS1NORMAL}/(main|viins)/$PS1INSERT}"    
+  PS2=$RPS1    
+  zle reset-prompt
+}
+zle -N zle-line-init
+zle -N zle-keymap-select
