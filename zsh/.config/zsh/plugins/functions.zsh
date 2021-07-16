@@ -1,3 +1,6 @@
+dvim(){
+	docker run -it -v ${@:-$(pwd)}:/workspace -e HOST_USER_ID=$(id -u $USER) -e HOST_GROUP_ID=$(id -g $USER) dolard/vim:latest
+}
 dim(){
     if [ "$1" ]; then
         docker images -a | grep $1 | awk '{print $3}' | xargs docker rmi -f

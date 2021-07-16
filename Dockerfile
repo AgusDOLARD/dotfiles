@@ -26,6 +26,7 @@ RUN nvim  --headless +PlugInstall +qall
 ENV SHELL /bin/zsh
 COPY zsh/.config/zsh ${HOME}/.config/zsh
 COPY zsh/.zshenv ${HOME}/.zshenv
+RUN touch ${HOME}/.cache/z
 
 # Install TMUX
 COPY tmux/.config/tmux/ ${HOME}/.config/tmux

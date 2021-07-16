@@ -1,8 +1,7 @@
 alias byeOrphans='sudo pacman -Rns $(pacman -Qtdq)'
 alias ccd="cd '${DOTS:-$HOME/.dots}'"
 alias cya="rm -rf"
-alias dps="docker ps -a --format 'table {{.ID}}\t{{.Image}}\t{{.Names}}\t{{.Size}}\t{{.Status}}'"
-alias dvim='docker run -it -v $(pwd):/workspace -e HOST_USER_ID=$(id -u $USER) -e HOST_GROUP_ID=$(id -g $USER) dolard/vim:latest'
+alias dps="docker ps --format 'table {{.ID}}\t{{.Image}}\t{{.Names}}\t{{.Size}}\t{{.Status}}'"
 alias exe='chmod +x'
 alias gss="git status"
 alias l="ls -alh"
