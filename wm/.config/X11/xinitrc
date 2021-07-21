@@ -3,10 +3,8 @@ xautolock -time 10 -locker autolock -corners -000 &
 numlockx &
 dunst &
 clipmenud &
-picom --experimental-backends &
-feh --bg-scale ~/.dots/wallpaper.* --no-fehbg &
+feh --bg-scale ${DOTS}/wm/wallpaper.* --no-fehbg &
 setxkbmap us -option caps:backspace &
 xset r 66 &
 pgrep -x sxhkd > /dev/null || sxhkd &
-/* dwmblocks & */
 exec bspwm
