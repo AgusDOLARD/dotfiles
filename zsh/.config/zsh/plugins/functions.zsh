@@ -1,3 +1,10 @@
+docker-sh(){
+	CMD=${1:-sh}
+	CONTAINER=$(docker ps | awk '{if (NR!=1) {print $1,$2}}' | fzf | awk '{print $1}')
+	[[ -z $CONTAINER ]] && exit 1
+
+	docker exec -it $CONTAINER $CMD
+}
 dvim(){
 	docker run -it -v ${@:-$(pwd)}:/workspace -e HOST_USER_ID=$(id -u $USER) -e HOST_GROUP_ID=$(id -g $USER) dolard/vim:latest
 }
